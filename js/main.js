@@ -2,10 +2,9 @@
    RIHANA MEER'S BAKERY - MASTER JAVASCRIPT
    ============================================ */
 
-// Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
     
-    // ========== MOBILE MENU ==========
+    // Mobile Menu
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const closeMenuBtn = document.getElementById('closeMenuBtn');
     const mobileNav = document.getElementById('mobileNav');
@@ -27,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMobileMenu);
     if (overlay) overlay.addEventListener('click', closeMobileMenu);
     
-    // ========== TOAST NOTIFICATION ==========
+    // Toast Notification
     window.showToast = function(message) {
         let toast = document.querySelector('.toast');
         if (!toast) {
@@ -40,15 +39,15 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => toast.classList.remove('show'), 2500);
     };
     
-    // ========== ADD TO CART (All Pages) ==========
+    // Add to Cart
     document.querySelectorAll('.add-to-cart').forEach(btn => {
         btn.addEventListener('click', function(e) {
             const item = this.getAttribute('data-item') || 'Item';
-            showToast(`🌸 ${item} added to cart!`);
+            showToast(`🍞 ${item} added to cart!`);
         });
     });
     
-    // ========== ACTIVE NAVIGATION LINK ==========
+    // Active Navigation Link
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.desktop-nav a, .mobile-nav-links a').forEach(link => {
         const linkHref = link.getAttribute('href');
@@ -58,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// ========== GOOGLE MAPS INITIALIZATION (Contact Page Only) ==========
+// Google Maps
 function initMap() {
     const mapElement = document.getElementById('map');
     if (mapElement && typeof L !== 'undefined') {
@@ -70,17 +69,15 @@ function initMap() {
             maxZoom: 19
         }).addTo(map);
         L.marker(addisCoords).addTo(map)
-            .bindPopup('🌸 Rihana Meer\'s Bakery<br>Addis Ababa, Ethiopia')
+            .bindPopup('🥐 Rihana Meer\'s Bakery<br>Addis Ababa, Ethiopia')
             .openPopup();
     }
 }
 
-// Load map when contact page loads
 if (document.getElementById('map')) {
     if (typeof L !== 'undefined') {
         initMap();
     } else {
-        // Load Leaflet dynamically if needed
         const script = document.createElement('script');
         script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
         script.onload = initMap;

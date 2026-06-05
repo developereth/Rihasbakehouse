@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rihana Meer's | Catering Services | Events</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="main-header">
+    <div class="container">
+        <div class="logo"><a href="index.html"><h1>🌸 RIHANA MEER'S</h1><span>Artisan Bakery & Catering</span></a></div>
+        <nav class="desktop-nav">
+            <a href="index.html">Home</a><a href="about.html">About</a>
+            <a href="menu.html">Menu</a><a href="catering.html" class="active">Catering</a>
+            <a href="order.html">Order</a><a href="contact.html">Contact</a>
+        </nav>
+        <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+        <a href="order.html" class="btn-order">Order Now</a>
+    </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header"><h3>🌸 Rihana Meer's</h3><button class="close-menu" id="closeMenuBtn"><i class="fas fa-times"></i></button></div>
+    <div class="mobile-nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="menu.html">Menu</a><a href="catering.html">Catering</a><a href="order.html">Order</a><a href="contact.html">Contact</a></div>
+    <div class="mobile-nav-footer"><p><i class="fas fa-phone"></i> +251 79 11 069 818</p></div>
+</div>
+<div class="overlay" id="overlay"></div>
+
+<main>
+    <section class="container">
+        <h2 class="section-title">🎉 Catering Services</h2>
+        <div class="cards-grid">
+            <div class="product-card"><img src="https://images.unsplash.com/photo-1555244162-803834f70033?w=600&h=400&fit=crop" class="card-image"><div class="card-content"><h3>Corporate Breakfast</h3><p>Pastry boxes, fresh bread & coffee</p><div class="price">From ETB 2,500</div><button class="catering-inquiry" onclick="showToast('📋 Fill form below')">Request Quote</button></div></div>
+            <div class="product-card"><img src="https://images.unsplash.com/photo-1535254973040-45b5e3a9ec4a?w=600&h=400&fit=crop" class="card-image"><div class="card-content"><h3>Wedding Sweets Table</h3><p>Custom cake towers, dessert grazing</p><div class="price">Custom package</div><button class="catering-inquiry" onclick="showToast('📋 Fill form below')">Inquire Now</button></div></div>
+            <div class="product-card"><img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=600&h=400&fit=crop" class="card-image"><div class="card-content"><h3>Private Celebrations</h3><p>Buffet with Ethiopian & continental breads</p><div class="price">ETB 3,200+</div><button class="catering-inquiry" onclick="showToast('📋 Fill form below')">Contact Catering</button></div></div>
+        </div>
+        
+        <div class="form-container">
+            <h3 style="color: var(--accent-pink); margin-bottom: 20px;">📋 Catering Request Form</h3>
+            <form id="cateringForm">
+                <div class="form-group"><input type="text" id="catName" placeholder="Full Name" required></div>
+                <div class="form-group"><input type="email" id="catEmail" placeholder="Email Address" required></div>
+                <div class="form-group"><input type="tel" id="catPhone" placeholder="Phone Number"></div>
+                <div class="form-group"><select id="catEvent"><option>Corporate Event</option><option>Wedding / Anniversary</option><option>Private Party</option><option>Other</option></select></div>
+                <div class="form-group"><textarea rows="3" id="catMsg" placeholder="Event details, guest count & preferences..."></textarea></div>
+                <button type="button" class="btn-primary" onclick="showToast('🎉 Catering request received! We\'ll contact you soon.')">Submit Inquiry</button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer><p>© 2026 Rihana Meer's — Artisan Bakery & Catering | Addis Ababa, Ethiopia</p></footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

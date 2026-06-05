@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Order fresh baked goods online for delivery in Addis Ababa">
-    <meta name="theme-color" content="#FFF8F0">
-    <title>Order | Rihana Meer's Bakery</title>
+    <meta name="theme-color" content="#FFF5F7">
+    <title>Order Online | Riha's Bakehouse | Bites to Happiness</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -14,7 +14,7 @@
 
 <div class="mobile-sidebar" id="mobileSidebar">
     <div class="sidebar-header">
-        <h3>🥐 Rihana Meer's</h3>
+        <h3>🌸 Riha's Bakehouse</h3>
         <button class="close-sidebar" id="closeSidebarBtn"><i class="fas fa-times"></i></button>
     </div>
     <div class="sidebar-nav">
@@ -27,7 +27,7 @@
     <a href="order.html" class="sidebar-order-btn"><i class="fas fa-shopping-bag"></i> ORDER NOW</a>
     <div class="sidebar-footer">
         <p><i class="fas fa-phone-alt"></i> +251 79 11 069 818</p>
-        <p><i class="fas fa-envelope"></i> rythamanager@qmail.com</p>
+        <p><i class="fas fa-envelope"></i> rihasbakehouse@qmail.com</p>
         <p><i class="fas fa-location-dot"></i> Addis Ababa, Ethiopia</p>
     </div>
 </div>
@@ -36,7 +36,7 @@
 <header class="main-header">
     <div class="container">
         <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
-        <div class="logo"><a href="index.html"><h1>🥐 RIHANA MEER'S</h1><span>Artisan Bakery & Catering</span></a></div>
+        <div class="logo"><a href="index.html"><h1>🌸 RIHA'S BAKEHOUSE</h1><span>Bites to Happiness</span></a></div>
         <nav class="desktop-nav">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -44,13 +44,15 @@
             <a href="catering.html">Catering</a>
             <a href="contact.html">Contact</a>
         </nav>
-        <a href="order.html" class="btn-order"><i class="fas fa-shopping-bag"></i> Order</a>
+        <a href="order.html" class="btn-order"><i class="fas fa-shopping-bag"></i> Order Now</a>
     </div>
 </header>
 
 <main>
-    <section class="page-hero" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), url('https://raw.githubusercontent.com/developereth/Rihasbakehouse/e25556f86fa35220a0a562366f5642f49d7dc7b2/360_F_996648613_JeLaqLaREMrfl1DwqWluZPTdFZurAo3a.jpg'); background-size: cover; background-position: center;">
-        <div class="container">
+    <section class="hero">
+        <div class="hero-bg" style="background-image: url('https://raw.githubusercontent.com/developereth/Rihasbakehouse/e25556f86fa35220a0a562366f5642f49d7dc7b2/360_F_996648613_JeLaqLaREMrfl1DwqWluZPTdFZurAo3a.jpg');"></div>
+        <div class="hero-overlay-light"></div>
+        <div class="container hero-content">
             <h1>Place Your Order</h1>
             <p>Fresh from our oven to your doorstep</p>
         </div>
@@ -59,7 +61,6 @@
     <section class="order-section">
         <div class="container">
             <div class="order-layout">
-                <!-- Order Summary -->
                 <div class="order-summary">
                     <h3>Your Order <span id="cartCount">(0 items)</span></h3>
                     <div id="cartItems" class="cart-items">
@@ -71,34 +72,30 @@
                     <div class="delivery-note">🚚 Free delivery on orders over ETB 1,500</div>
                 </div>
 
-                <!-- Order Form -->
                 <div class="order-form">
                     <h3>Delivery Details</h3>
-                    <form id="orderForm">
-                        <input type="text" id="orderName" placeholder="Full Name" required>
-                        <input type="tel" id="orderPhone" placeholder="Phone Number" required>
-                        <input type="email" id="orderEmail" placeholder="Email Address">
-                        <input type="text" id="orderAddress" placeholder="Delivery Address" required>
-                        <div class="form-row-small">
-                            <select id="orderDate">
-                                <option>Today</option>
-                                <option>Tomorrow</option>
-                                <option>In 2 days</option>
-                            </select>
-                            <select id="orderTime">
-                                <option>Morning (8am-12pm)</option>
-                                <option>Afternoon (12pm-4pm)</option>
-                                <option>Evening (4pm-7pm)</option>
-                            </select>
-                        </div>
-                        <textarea rows="2" id="specialInstructions" placeholder="Special instructions..."></textarea>
-                        <button type="button" id="submitOrderBtn">Place Order</button>
-                    </form>
+                    <input type="text" id="orderName" placeholder="Full Name" required>
+                    <input type="tel" id="orderPhone" placeholder="Phone Number" required>
+                    <input type="email" id="orderEmail" placeholder="Email Address">
+                    <input type="text" id="orderAddress" placeholder="Delivery Address" required>
+                    <div class="form-row-small">
+                        <select id="orderDate">
+                            <option>Today</option>
+                            <option>Tomorrow</option>
+                            <option>In 2 days</option>
+                        </select>
+                        <select id="orderTime">
+                            <option>Morning (8am-12pm)</option>
+                            <option>Afternoon (12pm-4pm)</option>
+                            <option>Evening (4pm-7pm)</option>
+                        </select>
+                    </div>
+                    <textarea rows="2" id="specialInstructions" placeholder="Special instructions..."></textarea>
+                    <button id="submitOrderBtn">Place Order</button>
                 </div>
             </div>
 
-            <!-- Menu Items -->
-            <h3 class="menu-title">Select Items</h3>
+            <h3 class="menu-title">Select Items to Add</h3>
             <div class="items-grid">
                 <div class="order-item" data-name="Butter Croissant" data-price="95">
                     <span>🥐 Butter Croissant</span>
@@ -135,7 +132,7 @@
                     <span>ETB 105</span>
                     <button class="add-item">+ Add</button>
                 </div>
-                <div class="order-item" data-name="Baguette" data-price="70">
+                <div class="order-item" data-name="Artisan Baguette" data-price="70">
                     <span>🥖 Artisan Baguette</span>
                     <span>ETB 70</span>
                     <button class="add-item">+ Add</button>
@@ -145,10 +142,61 @@
     </section>
 </main>
 
-<footer>
+<footer class="main-footer">
     <div class="container">
-        <p>© 2026 Rihana Meer's — Artisan Bakery & Catering | Addis Ababa, Ethiopia</p>
-        <p>🥐 Handcrafted with love</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">🌸 Riha's Bakehouse</div>
+                <p class="tagline">Bites to Happiness</p>
+                <p>Artisan Bakery & Catering<br>Addis Ababa, Ethiopia</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="menu.html">Our Menu</a></li>
+                    <li><a href="catering.html">Catering</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="order.html">Order Online</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Opening Hours</h4>
+                <ul class="hours">
+                    <li>Monday - Saturday</li>
+                    <li><strong>7:00 AM - 8:00 PM</strong></li>
+                    <li>Sunday</li>
+                    <li><strong>8:00 AM - 6:00 PM</strong></li>
+                    <li>Holidays</li>
+                    <li><strong>8:00 AM - 5:00 PM</strong></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <ul class="contact-info">
+                    <li><i class="fas fa-phone"></i> +251 79 11 069 818</li>
+                    <li><i class="fas fa-envelope"></i> rihasbakehouse@qmail.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Bole Subcity, near Atlas</li>
+                </ul>
+                <div class="payment-badge">
+                    <span>We Accept:</span>
+                    <i class="fas fa-money-bill-wave"></i>
+                    <i class="fas fa-mobile-alt"></i>
+                    <i class="fas fa-university"></i>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Riha's Bakehouse — Bites to Happiness | Artisan Bakery & Catering | Addis Ababa, Ethiopia</p>
+            <p class="footer-heart">✨ Handcrafted with love & passion | Fresh Daily Since 2020 ✨</p>
+        </div>
     </div>
 </footer>
 
@@ -164,7 +212,7 @@
         const countSpan = document.getElementById('cartCount');
         
         if (cart.length === 0) {
-            cartDiv.innerHTML = '<div class="empty-cart">Your cart is empty</div>';
+            cartDiv.innerHTML = '<div class="empty-cart">🛒 Your cart is empty</div>';
             totalSpan.textContent = 'ETB 0';
             countSpan.textContent = '(0 items)';
             return;
@@ -177,8 +225,8 @@
             total += itemTotal;
             html += `
                 <div class="cart-item">
-                    <span>${item.name}</span>
-                    <div class="cart-item-controls">
+                    <span><strong>${item.name}</strong></span>
+                    <div class="cart-controls">
                         <button class="qty-btn" onclick="changeQty(${idx}, -1)">-</button>
                         <span>${item.qty}</span>
                         <button class="qty-btn" onclick="changeQty(${idx}, 1)">+</button>
@@ -223,7 +271,6 @@
             const itemDiv = this.closest('.order-item');
             const name = itemDiv.getAttribute('data-name');
             const price = parseInt(itemDiv.getAttribute('data-price'));
-            
             const existing = cart.find(i => i.name === name);
             if (existing) {
                 existing.qty++;
@@ -251,10 +298,13 @@
         
         const total = cart.reduce((s, i) => s + (i.price * i.qty), 0);
         showToast(`✅ Thanks ${name}! Your order (ETB ${total}) has been placed. We'll call you.`);
-        
         cart = [];
         updateCart();
-        document.getElementById('orderForm').reset();
+        document.getElementById('orderName').value = '';
+        document.getElementById('orderPhone').value = '';
+        document.getElementById('orderEmail').value = '';
+        document.getElementById('orderAddress').value = '';
+        document.getElementById('specialInstructions').value = '';
     });
 </script>
 </body>

@@ -2,50 +2,180 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rihana Meer's | About Us | Our Story</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Learn about Rihana Meer's Bakery - our story, passion for artisan baking, and commitment to quality in Addis Ababa">
+    <meta name="keywords" content="about bakery Addis Ababa, artisan baker, Rihana Meer, Ethiopian bakery story">
+    <meta name="author" content="Rihana Meer's Bakery">
+    <meta name="theme-color" content="#FFF8F0">
+    <meta property="og:title" content="About Us | Rihana Meer's Artisan Bakery">
+    <meta property="og:description" content="Our story and passion for artisan baking in Addis Ababa">
+    <meta property="og:type" content="website">
+    <title>About Us | Rihana Meer's | Artisan Bakery & Catering</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+<!-- Mobile Sidebar -->
+<div class="mobile-sidebar" id="mobileSidebar">
+    <div class="sidebar-header">
+        <h3>🥐 Rihana Meer's</h3>
+        <button class="close-sidebar" id="closeSidebarBtn"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="sidebar-nav">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="about.html" class="active"><i class="fas fa-heart"></i> About</a>
+        <a href="menu.html"><i class="fas fa-bread-slice"></i> Menu</a>
+        <a href="catering.html"><i class="fas fa-champagne-glasses"></i> Catering</a>
+        <a href="contact.html"><i class="fas fa-map-pin"></i> Contact</a>
+    </div>
+    <a href="order.html" class="sidebar-order-btn"><i class="fas fa-shopping-bag"></i> ORDER NOW <i class="fas fa-arrow-right"></i></a>
+    <div class="sidebar-footer">
+        <p><i class="fas fa-phone-alt"></i> +251 79 11 069 818</p>
+        <p><i class="fas fa-envelope"></i> rythamanager@qmail.com</p>
+        <p><i class="fas fa-location-dot"></i> Addis Ababa, Ethiopia</p>
+    </div>
+</div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- Header -->
 <header class="main-header">
     <div class="container">
-        <div class="logo"><a href="index.html"><h1>🌸 RIHANA MEER'S</h1><span>Artisan Bakery & Catering</span></a></div>
-        <nav class="desktop-nav">
-            <a href="index.html">Home</a><a href="about.html" class="active">About</a>
-            <a href="menu.html">Menu</a><a href="catering.html">Catering</a>
-            <a href="order.html">Order</a><a href="contact.html">Contact</a>
-        </nav>
         <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
-        <a href="order.html" class="btn-order">Order Now</a>
+        <div class="logo">
+            <a href="index.html"><h1>🥐 RIHANA MEER'S</h1><span>Artisan Bakery & Catering</span></a>
+        </div>
+        <nav class="desktop-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="menu.html">Menu</a>
+            <a href="catering.html">Catering</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <a href="order.html" class="btn-order"><i class="fas fa-shopping-bag"></i> Order Now</a>
     </div>
 </header>
 
-<div class="mobile-nav" id="mobileNav">
-    <div class="mobile-nav-header"><h3>🌸 Rihana Meer's</h3><button class="close-menu" id="closeMenuBtn"><i class="fas fa-times"></i></button></div>
-    <div class="mobile-nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="menu.html">Menu</a><a href="catering.html">Catering</a><a href="order.html">Order</a><a href="contact.html">Contact</a></div>
-    <div class="mobile-nav-footer"><p><i class="fas fa-phone"></i> +251 79 11 069 818</p></div>
-</div>
-<div class="overlay" id="overlay"></div>
-
 <main>
-    <section class="about-hero">
-        <div class="container"><h2>Our Sweet Story</h2><p>Passion for baking since 2020</p></div>
-    </section>
-    <div class="container about-content">
-        <div class="about-image"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=500&fit=crop" alt="Bakery"></div>
-        <div class="about-text">
-            <h3>🌸 Rihana Meer's</h3>
-            <p>Founded by Rihana Meersa, our bakery brings together traditional Ethiopian baking heritage and modern French pastry techniques.</p>
-            <p>Every morning at 4 AM, our ovens fire up to create the freshest breads, pastries, and cakes in Addis Ababa.</p>
-            <p><strong>✨ 100% Natural Ingredients</strong><br>✨ <strong>Baked Fresh Daily</strong><br>✨ <strong>Ethiopian & Continental Fusion</strong></p>
+    <!-- Page Hero -->
+    <section class="page-hero" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/images%20(3).jpeg');">
+        <div class="container">
+            <h1>❤️ Our Story</h1>
+            <p>Passion for baking since 2020</p>
         </div>
-    </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/Yellow-Cake25-1.jpg" alt="Rihana Meer's Bakery">
+                </div>
+                <div class="about-text">
+                    <h2>🌸 Rihana Meer's</h2>
+                    <p>Founded by Rihana Meersa, our bakery brings together traditional Ethiopian baking heritage and modern French pastry techniques. Every morning at 4 AM, our ovens fire up to create the freshest breads, pastries, and cakes in Addis Ababa.</p>
+                    <p>What started as a small home bakery has grown into a beloved local institution, serving the community with love and dedication. We believe that good food brings people together, and every bite should tell a story of quality and care.</p>
+                    <div class="stats-grid">
+                        <div class="stat">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Years of Excellence</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Artisan Recipes</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-label">Happy Customers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <h2 class="section-title">Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Quality Ingredients</h3>
+                    <p>We source only the finest local and imported ingredients for our baked goods.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-hand-sparkles"></i>
+                    <h3>Artisan Craftsmanship</h3>
+                    <p>Every item is handcrafted with traditional techniques and attention to detail.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Baked with Love</h3>
+                    <p>Passion and care goes into every loaf, pastry, and cake we create.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Community First</h3>
+                    <p>We're proud to serve our Addis Ababa community with warmth and hospitality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Baker -->
+    <section class="baker-section">
+        <div class="container">
+            <div class="baker-grid">
+                <div class="baker-text">
+                    <h2>👩‍🍳 Meet the Baker</h2>
+                    <h3>Rihana Meersa</h3>
+                    <p>Head Baker & Founder</p>
+                    <p>Rihana's journey into baking began in her grandmother's kitchen, where she learned the secrets of traditional Ethiopian breads. After training at prestigious pastry schools in Paris and Vienna, she returned to Addis Ababa to create something special - a bakery that honors both local traditions and international techniques.</p>
+                    <p>"Baking is my meditation. Every morning, the aroma of fresh bread reminds me why I love what I do." - Rihana</p>
+                </div>
+                <div class="baker-image">
+                    <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/Mocha-Cake-Recipe-Card.jpg" alt="Head Baker Rihana">
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 
-<footer><p>© 2026 Rihana Meer's — Artisan Bakery & Catering | Addis Ababa, Ethiopia</p></footer>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>🥐 Rihana Meer's</h3>
+                <p>Artisan Bakery & Catering<br>Addis Ababa, Ethiopia</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Menu</a>
+                <a href="catering.html">Catering</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Hours</h4>
+                <p>Mon-Sat: 7am - 8pm</p>
+                <p>Sunday: 8am - 6pm</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fas fa-phone"></i> +251 79 11 069 818</p>
+                <p><i class="fas fa-envelope"></i> rythamanager@qmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Rihana Meer's — Artisan Bakery & Catering | Addis Ababa, Ethiopia</p>
+        </div>
+    </div>
+</footer>
 
 <script src="js/main.js"></script>
 </body>

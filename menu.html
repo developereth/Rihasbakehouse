@@ -2,52 +2,309 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rihana Meer's | Menu | Fresh Baked Goods</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Explore our artisan bakery menu - fresh breads, pastries, cakes and Ethiopian specialties in Addis Ababa">
+    <meta name="keywords" content="bakery menu Addis Ababa, artisan bread, pastries, cakes, Ethiopian bakery">
+    <meta name="author" content="Rihana Meer's Bakery">
+    <meta name="theme-color" content="#FFF8F0">
+    <meta property="og:title" content="Menu | Rihana Meer's Artisan Bakery">
+    <meta property="og:description" content="Fresh daily baked goods in Addis Ababa, Ethiopia">
+    <meta property="og:type" content="website">
+    <title>Menu | Rihana Meer's | Artisan Bakery & Catering</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥐</text></svg>">
 </head>
 <body>
 
+<!-- Mobile Sidebar -->
+<div class="mobile-sidebar" id="mobileSidebar">
+    <div class="sidebar-header">
+        <h3>🥐 Rihana Meer's</h3>
+        <button class="close-sidebar" id="closeSidebarBtn"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="sidebar-nav">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="about.html"><i class="fas fa-heart"></i> About</a>
+        <a href="menu.html" class="active"><i class="fas fa-bread-slice"></i> Menu</a>
+        <a href="catering.html"><i class="fas fa-champagne-glasses"></i> Catering</a>
+        <a href="contact.html"><i class="fas fa-map-pin"></i> Contact</a>
+    </div>
+    <a href="order.html" class="sidebar-order-btn"><i class="fas fa-shopping-bag"></i> ORDER NOW <i class="fas fa-arrow-right"></i></a>
+    <div class="sidebar-footer">
+        <p><i class="fas fa-phone-alt"></i> +251 79 11 069 818</p>
+        <p><i class="fas fa-envelope"></i> rythamanager@qmail.com</p>
+        <p><i class="fas fa-location-dot"></i> Addis Ababa, Ethiopia</p>
+    </div>
+</div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- Header -->
 <header class="main-header">
     <div class="container">
-        <div class="logo"><a href="index.html"><h1>🌸 RIHANA MEER'S</h1><span>Artisan Bakery & Catering</span></a></div>
-        <nav class="desktop-nav">
-            <a href="index.html">Home</a><a href="about.html">About</a>
-            <a href="menu.html" class="active">Menu</a><a href="catering.html">Catering</a>
-            <a href="order.html">Order</a><a href="contact.html">Contact</a>
-        </nav>
         <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
-        <a href="order.html" class="btn-order">Order Now</a>
+        <div class="logo">
+            <a href="index.html"><h1>🥐 RIHANA MEER'S</h1><span>Artisan Bakery & Catering</span></a>
+        </div>
+        <nav class="desktop-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="menu.html" class="active">Menu</a>
+            <a href="catering.html">Catering</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <a href="order.html" class="btn-order"><i class="fas fa-shopping-bag"></i> Order Now</a>
     </div>
 </header>
 
-<div class="mobile-nav" id="mobileNav">
-    <div class="mobile-nav-header"><h3>🌸 Rihana Meer's</h3><button class="close-menu" id="closeMenuBtn"><i class="fas fa-times"></i></button></div>
-    <div class="mobile-nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="menu.html">Menu</a><a href="catering.html">Catering</a><a href="order.html">Order</a><a href="contact.html">Contact</a></div>
-    <div class="mobile-nav-footer"><p><i class="fas fa-phone"></i> +251 79 11 069 818</p></div>
-</div>
-<div class="overlay" id="overlay"></div>
-
 <main>
+    <!-- Page Hero with Your Image -->
+    <section class="page-hero" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/images%20(3).jpeg');">
+        <div class="container">
+            <h1>🥐 Our Artisan Collection</h1>
+            <p>Freshly baked daily with love and premium ingredients</p>
+        </div>
+    </section>
+
+    <!-- Menu Categories -->
+    <div class="menu-categories">
+        <div class="container">
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all">All Items</button>
+                <button class="filter-btn" data-category="breads">🍞 Breads</button>
+                <button class="filter-btn" data-category="pastries">🥐 Pastries</button>
+                <button class="filter-btn" data-category="cakes">🎂 Cakes</button>
+                <button class="filter-btn" data-category="ethiopian">🇪🇹 Ethiopian Specials</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu Items Grid -->
     <section class="container">
-        <h2 class="section-title">🥐 Our Signature Collection</h2>
-        <div class="cards-grid">
-            <div class="product-card"><img src="https://images.unsplash.com/photo-1549751438-b96205fb74ff?w=600&h=400&fit=crop" class="card-image"><div class="card-content"><h3>Baguette Classique</h3><p>Crispy crust, soft crumb</p><div class="price">ETB 70</div><button class="add-to-cart" data-item="Baguette - 70 ETB">Add to Cart</button></div></div>
-            <div class="product-card"><img src="https://images.unsplash.com/photo-1586444248902-2f0ed0f7f8b6?w=600&h=400&fit=crop" class="card-image"><div class="card-content"><h3>Focaccia Rosmarino</h3><p>Rosemary & sea salt</p><div class="price">ETB 110</div><button class="add-to-cart" data-item="Focaccia - 110 ETB">Add to Cart</button></div></div>
-            <div class="product-card"><img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=600&h=400&fit=crop" class="card-image"><div class="card-content"><h3>Cinnamon Bun</h3><p>Swirled with cinnamon glaze</p><div class="price">ETB 85</div><button class="add-to-cart" data-item="Cinnamon Bun - 85 ETB">Add to Cart</button></div></div>
-            <div class="product-card"><img src="https://images.unsplash.com/photo-1623334044301-6c9f9e6a1d2c?w=600&h=400&fit=crop" class="card-image"><div class="card-content"><h3>Apple Turnover</h3><p>Caramelized apples</p><div class="price">ETB 100</div><button class="add-to-cart" data-item="Apple Turnover - 100 ETB">Add to Cart</button></div></div>
-            <div class="product-card"><img src="https://images.unsplash.com/photo-1585478259715-1f3d6b7cfd3c?w=600&h=400&fit=crop" class="card-image"><div class="card-content"><h3>Ethiopian Dabo Kolo</h3><p>Crunchy snack bites</p><div class="price">ETB 60</div><button class="add-to-cart" data-item="Dabo Kolo - 60 ETB">Add to Cart</button></div></div>
-            <div class="product-card"><img src="https://images.unsplash.com/photo-1549741422-8c6f7d9f8b4c?w=600&h=400&fit=crop" class="card-image"><div class="card-content"><h3>Pain au Chocolat</h3><p>Dark chocolate filled</p><div class="price">ETB 105</div><button class="add-to-cart" data-item="Pain au Chocolat - 105 ETB">Add to Cart</button></div></div>
-            <div class="product-card"><img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?w=600&h=400&fit=crop" class="card-image"><div class="card-content"><h3>Brioche</h3><p>Buttery, soft texture</p><div class="price">ETB 95</div><button class="add-to-cart" data-item="Brioche - 95 ETB">Add to Cart</button></div></div>
-            <div class="product-card"><img src="https://images.unsplash.com/photo-1586444248902-2f0ed0f7f8b6?w=600&h=400&fit=crop" class="card-image"><div class="card-content"><h3>Dark Rye Bread</h3><p>Nutty, earthy flavor</p><div class="price">ETB 130</div><button class="add-to-cart" data-item="Dark Rye - 130 ETB">Add to Cart</button></div></div>
+        <div class="cards-grid" id="menuGrid">
+            <!-- Breads -->
+            <div class="product-card" data-category="breads">
+                <div class="card-image-wrapper">
+                    <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/download.jpeg" class="card-image" alt="Artisan Baguette">
+                    <div class="card-overlay">
+                        <button class="quick-view">Quick View</button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <i class="fas fa-baguette"></i>
+                    <h3>Artisan Baguette</h3>
+                    <p>Crispy crust, soft crumb, 100% French flour</p>
+                    <div class="price">ETB 70</div>
+                    <button class="add-to-cart" data-item="Artisan Baguette - 70 ETB">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="breads">
+                <div class="card-image-wrapper">
+                    <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/download%20(1).jpeg" class="card-image" alt="Sourdough Bread">
+                    <div class="card-overlay">
+                        <button class="quick-view">Quick View</button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <i class="fas fa-bread-loaf"></i>
+                    <h3>Sourdough Boule</h3>
+                    <p>Tangy, rustic crust, 48h fermentation</p>
+                    <div class="price">ETB 120</div>
+                    <button class="add-to-cart" data-item="Sourdough Boule - 120 ETB">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Pastries -->
+            <div class="product-card" data-category="pastries">
+                <div class="card-image-wrapper">
+                    <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/images%20(1).jpeg" class="card-image" alt="Butter Croissant">
+                    <div class="card-overlay">
+                        <button class="quick-view">Quick View</button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <i class="fas fa-croissant"></i>
+                    <h3>Butter Croissant</h3>
+                    <p>Flaky, golden, 100% butter</p>
+                    <div class="price">ETB 95</div>
+                    <button class="add-to-cart" data-item="Butter Croissant - 95 ETB">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="pastries">
+                <div class="card-image-wrapper">
+                    <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/images%20(2).jpeg" class="card-image" alt="Pain au Chocolat">
+                    <div class="card-overlay">
+                        <button class="quick-view">Quick View</button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <i class="fas fa-chocolate"></i>
+                    <h3>Pain au Chocolat</h3>
+                    <p>Dark chocolate filled pastry</p>
+                    <div class="price">ETB 105</div>
+                    <button class="add-to-cart" data-item="Pain au Chocolat - 105 ETB">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Cakes -->
+            <div class="product-card" data-category="cakes">
+                <div class="card-image-wrapper">
+                    <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/Mocha-Cake-Recipe-Card.jpg" class="card-image" alt="Mocha Cake">
+                    <div class="card-overlay">
+                        <button class="quick-view">Quick View</button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <i class="fas fa-mug-hot"></i>
+                    <h3>Mocha Cake</h3>
+                    <p>Rich coffee-chocolate fusion</p>
+                    <div class="price">ETB 350</div>
+                    <button class="add-to-cart" data-item="Mocha Cake - 350 ETB">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="cakes">
+                <div class="card-image-wrapper">
+                    <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/Yellow-Cake25-1.jpg" class="card-image" alt="Yellow Cake">
+                    <div class="card-overlay">
+                        <button class="quick-view">Quick View</button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <i class="fas fa-birthday-cake"></i>
+                    <h3>Classic Yellow Cake</h3>
+                    <p>Moist, buttery vanilla goodness</p>
+                    <div class="price">ETB 280</div>
+                    <button class="add-to-cart" data-item="Yellow Cake - 280 ETB">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="cakes">
+                <div class="card-image-wrapper">
+                    <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/images%20(4).jpeg" class="card-image" alt="Honey Cake">
+                    <div class="card-overlay">
+                        <button class="quick-view">Quick View</button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <i class="fas fa-honey-pot"></i>
+                    <h3>Honey Cake</h3>
+                    <p>Moist, honey-infused, walnut crust</p>
+                    <div class="price">ETB 280</div>
+                    <button class="add-to-cart" data-item="Honey Cake - 280 ETB">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Ethiopian Specials -->
+            <div class="product-card" data-category="ethiopian">
+                <div class="card-image-wrapper">
+                    <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/images%20(6).jpeg" class="card-image" alt="Ethiopian Himbasha">
+                    <div class="card-overlay">
+                        <button class="quick-view">Quick View</button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <i class="fas fa-mug-saucer"></i>
+                    <h3>Himbasha</h3>
+                    <p>Spiced celebratory bread with cardamom</p>
+                    <div class="price">ETB 150</div>
+                    <button class="add-to-cart" data-item="Himbasha - 150 ETB">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="ethiopian">
+                <div class="card-image-wrapper">
+                    <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/images%20(3).jpeg" class="card-image" alt="Dabo Kolo">
+                    <div class="card-overlay">
+                        <button class="quick-view">Quick View</button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Dabo Kolo</h3>
+                    <p>Crunchy Ethiopian snack bites</p>
+                    <div class="price">ETB 60</div>
+                    <button class="add-to-cart" data-item="Dabo Kolo - 60 ETB">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Custom Orders Available</h2>
+            <p>Need a special cake or large order? Contact us for personalized service</p>
+            <a href="order.html" class="btn-primary btn-large">Place Custom Order →</a>
         </div>
     </section>
 </main>
 
-<footer><p>© 2026 Rihana Meer's — Artisan Bakery & Catering | Addis Ababa, Ethiopia</p></footer>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>🥐 Rihana Meer's</h3>
+                <p>Artisan Bakery & Catering<br>Addis Ababa, Ethiopia</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Menu</a>
+                <a href="catering.html">Catering</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Hours</h4>
+                <p>Mon-Sat: 7am - 8pm</p>
+                <p>Sunday: 8am - 6pm</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fas fa-phone"></i> +251 79 11 069 818</p>
+                <p><i class="fas fa-envelope"></i> rythamanager@qmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Rihana Meer's — Artisan Bakery & Catering | Addis Ababa, Ethiopia</p>
+        </div>
+    </div>
+</footer>
+
+<div id="toastMsg" class="toast-msg">✓ Added to cart</div>
 
 <script src="js/main.js"></script>
+<script>
+    // Category Filter Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const menuItems = document.querySelectorAll('.product-card');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const category = this.getAttribute('data-category');
+                
+                // Filter items
+                menuItems.forEach(item => {
+                    if (category === 'all' || item.getAttribute('data-category') === category) {
+                        item.style.display = 'block';
+                        item.style.animation = 'fadeInUp 0.5s ease forwards';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+</script>
 </body>
 </html>

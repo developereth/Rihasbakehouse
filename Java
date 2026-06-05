@@ -1,0 +1,47 @@
+// js/data.js
+// ========== PREMIUM IMAGE PLACEHOLDERS & PRODUCT DATA ==========
+
+const PremiumImages = {
+    croissant: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&h=400&fit=crop',
+    sourdough: 'https://images.unsplash.com/photo-1585478259715-1f3d6b7cfd3c?w=600&h=400&fit=crop',
+    himbasha: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=400&fit=crop',
+    honeycake: 'https://images.unsplash.com/photo-1578985545062-69928b1d9582?w=600&h=400&fit=crop',
+    baguette: 'https://images.unsplash.com/photo-1549751438-b96205fb74ff?w=600&h=400&fit=crop',
+    focaccia: 'https://images.unsplash.com/photo-1586444248902-2f0ed0f7f8b6?w=600&h=400&fit=crop',
+    cinnamon: 'https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=600&h=400&fit=crop',
+    apple: 'https://images.unsplash.com/photo-1623334044301-6c9f9e6a1d2c?w=600&h=400&fit=crop',
+    dabo: 'https://images.unsplash.com/photo-1585478259715-1f3d6b7cfd3c?w=600&h=400&fit=crop',
+    rye: 'https://images.unsplash.com/photo-1586444248902-2f0ed0f7f8b6?w=600&h=400&fit=crop',
+    chocolat: 'https://images.unsplash.com/photo-1549741422-8c6f7d9f8b4c?w=600&h=400&fit=crop',
+    brioche: 'https://images.unsplash.com/photo-1550617931-e17a7b70dce2?w=600&h=400&fit=crop',
+    corporate: 'https://images.unsplash.com/photo-1555244162-803834f70033?w=600&h=400&fit=crop',
+    wedding: 'https://images.unsplash.com/photo-1535254973040-45b5e3a9ec4a?w=600&h=400&fit=crop',
+    private: 'https://images.unsplash.com/photo-1556911220-bff31c812dba?w=600&h=400&fit=crop'
+};
+
+// Featured Products for Home Page
+const FeaturedProducts = [
+    { name: 'Butter Croissant', price: 95, img: PremiumImages.croissant, icon: 'fa-croissant', desc: 'Flaky, golden, 100% French butter', itemKey: 'Butter Croissant - 95 ETB' },
+    { name: 'Sourdough Boule', price: 120, img: PremiumImages.sourdough, icon: 'fa-bread-loaf', desc: 'Tangy, rustic crust, 48h fermentation', itemKey: 'Sourdough Boule - 120 ETB' },
+    { name: 'Ethiopian Himbasha', price: 150, img: PremiumImages.himbasha, icon: 'fa-mug-saucer', desc: 'Spiced celebratory bread with cardamom', itemKey: 'Himbasha - 150 ETB' },
+    { name: 'Honey Cake', price: 280, img: PremiumImages.honeycake, icon: 'fa-cake-candles', desc: 'Moist, honey-infused, walnut crust', itemKey: 'Honey Cake - 280 ETB' }
+];
+
+// Full Menu Products
+const MenuProducts = [
+    { name: 'Baguette Classique', price: 70, icon: 'fa-baguette', img: PremiumImages.baguette, desc: 'Crispy crust, soft crumb', itemKey: 'Baguette Classique - 70 ETB' },
+    { name: 'Focaccia Rosmarino', price: 110, icon: 'fa-seedling', img: PremiumImages.focaccia, desc: 'Rosemary & sea salt', itemKey: 'Focaccia Rosmarino - 110 ETB' },
+    { name: 'Cinnamon Bun', price: 85, icon: 'fa-candy-cane', img: PremiumImages.cinnamon, desc: 'Swirled with cinnamon glaze', itemKey: 'Cinnamon Bun - 85 ETB' },
+    { name: 'Apple Turnover', price: 100, icon: 'fa-apple-alt', img: PremiumImages.apple, desc: 'Caramelized apples', itemKey: 'Apple Turnover - 100 ETB' },
+    { name: 'Ethiopian Dabo Kolo', price: 60, icon: 'fa-utensils', img: PremiumImages.dabo, desc: 'Crunchy snack bites', itemKey: 'Dabo Kolo - 60 ETB' },
+    { name: 'Dark Rye Bread', price: 130, icon: 'fa-wheat-alt', img: PremiumImages.rye, desc: 'Nutty, earthy flavor', itemKey: 'Dark Rye Bread - 130 ETB' },
+    { name: 'Pain au Chocolat', price: 105, icon: 'fa-chocolate', img: PremiumImages.chocolat, desc: 'Dark chocolate filled', itemKey: 'Pain au Chocolat - 105 ETB' },
+    { name: 'Brioche', price: 95, icon: 'fa-birthday-cake', img: PremiumImages.brioche, desc: 'Buttery, soft texture', itemKey: 'Brioche - 95 ETB' }
+];
+
+// Catering Packages
+const CateringPackages = [
+    { name: 'Corporate Breakfast', price: 'From ETB 2,500', img: PremiumImages.corporate, icon: 'fa-calendar-check', desc: 'Pastry boxes, fresh bread & premium coffee' },
+    { name: 'Wedding Sweets Table', price: 'Custom package', img: PremiumImages.wedding, icon: 'fa-ring', desc: 'Custom cake towers, dessert grazing' },
+    { name: 'Private Celebrations', price: 'ETB 3,200+', img: PremiumImages.private, icon: 'fa-people-arrows', desc: 'Buffet with Ethiopian & continental breads' }
+];

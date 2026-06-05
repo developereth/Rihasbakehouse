@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Explore our artisan bakery menu - fresh breads, pastries, and cakes">
-    <meta name="theme-color" content="#FFF8F0">
-    <title>Menu | Rihana Meer's Bakery</title>
+    <meta name="description" content="Explore our artisan bakery menu - fresh breads, pastries, cakes and Ethiopian specialties">
+    <meta name="theme-color" content="#FFF5F7">
+    <title>Menu | Riha's Bakehouse | Bites to Happiness</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -14,7 +14,7 @@
 
 <div class="mobile-sidebar" id="mobileSidebar">
     <div class="sidebar-header">
-        <h3>🥐 Rihana Meer's</h3>
+        <h3>🌸 Riha's Bakehouse</h3>
         <button class="close-sidebar" id="closeSidebarBtn"><i class="fas fa-times"></i></button>
     </div>
     <div class="sidebar-nav">
@@ -27,7 +27,7 @@
     <a href="order.html" class="sidebar-order-btn"><i class="fas fa-shopping-bag"></i> ORDER NOW</a>
     <div class="sidebar-footer">
         <p><i class="fas fa-phone-alt"></i> +251 79 11 069 818</p>
-        <p><i class="fas fa-envelope"></i> rythamanager@qmail.com</p>
+        <p><i class="fas fa-envelope"></i> rihasbakehouse@qmail.com</p>
         <p><i class="fas fa-location-dot"></i> Addis Ababa, Ethiopia</p>
     </div>
 </div>
@@ -36,7 +36,7 @@
 <header class="main-header">
     <div class="container">
         <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
-        <div class="logo"><a href="index.html"><h1>🥐 RIHANA MEER'S</h1><span>Artisan Bakery & Catering</span></a></div>
+        <div class="logo"><a href="index.html"><h1>🌸 RIHA'S BAKEHOUSE</h1><span>Bites to Happiness</span></a></div>
         <nav class="desktop-nav">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -44,28 +44,31 @@
             <a href="catering.html">Catering</a>
             <a href="contact.html">Contact</a>
         </nav>
-        <a href="order.html" class="btn-order"><i class="fas fa-shopping-bag"></i> Order</a>
+        <a href="order.html" class="btn-order"><i class="fas fa-shopping-bag"></i> Order Now</a>
     </div>
 </header>
 
 <main>
-    <section class="page-hero" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), url('https://raw.githubusercontent.com/developereth/Rihasbakehouse/e25556f86fa35220a0a562366f5642f49d7dc7b2/360_F_996648613_JeLaqLaREMrfl1DwqWluZPTdFZurAo3a.jpg'); background-size: cover; background-position: center;">
-        <div class="container">
+    <section class="hero">
+        <div class="hero-bg" style="background-image: url('https://raw.githubusercontent.com/developereth/Rihasbakehouse/e25556f86fa35220a0a562366f5642f49d7dc7b2/360_F_996648613_JeLaqLaREMrfl1DwqWluZPTdFZurAo3a.jpg');"></div>
+        <div class="hero-overlay-light"></div>
+        <div class="container hero-content">
             <h1>Our Menu</h1>
             <p>Freshly baked daily with love</p>
         </div>
     </section>
 
     <section class="container">
-        <div class="menu-categories">
-            <button class="cat-btn active" data-cat="all">All</button>
-            <button class="cat-btn" data-cat="breads">Breads</button>
-            <button class="cat-btn" data-cat="pastries">Pastries</button>
-            <button class="cat-btn" data-cat="cakes">Cakes</button>
+        <div class="category-filters">
+            <button class="filter-btn active" data-category="all">All Items</button>
+            <button class="filter-btn" data-category="breads">🍞 Breads</button>
+            <button class="filter-btn" data-category="pastries">🥐 Pastries</button>
+            <button class="filter-btn" data-category="cakes">🎂 Cakes</button>
+            <button class="filter-btn" data-category="ethiopian">🇪🇹 Ethiopian</button>
         </div>
 
         <div class="cards-grid" id="menuGrid">
-            <div class="product-card" data-cat="breads">
+            <div class="product-card" data-category="breads">
                 <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/download.jpeg" class="card-image" alt="Baguette">
                 <div class="card-content">
                     <h3>Artisan Baguette</h3>
@@ -74,7 +77,7 @@
                     <button class="add-to-cart" data-item="Baguette - 70 ETB">Add to Cart</button>
                 </div>
             </div>
-            <div class="product-card" data-cat="breads">
+            <div class="product-card" data-category="breads">
                 <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/download%20(1).jpeg" class="card-image" alt="Sourdough">
                 <div class="card-content">
                     <h3>Sourdough Boule</h3>
@@ -83,7 +86,7 @@
                     <button class="add-to-cart" data-item="Sourdough - 120 ETB">Add to Cart</button>
                 </div>
             </div>
-            <div class="product-card" data-cat="pastries">
+            <div class="product-card" data-category="pastries">
                 <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/images%20(1).jpeg" class="card-image" alt="Croissant">
                 <div class="card-content">
                     <h3>Butter Croissant</h3>
@@ -92,7 +95,7 @@
                     <button class="add-to-cart" data-item="Croissant - 95 ETB">Add to Cart</button>
                 </div>
             </div>
-            <div class="product-card" data-cat="pastries">
+            <div class="product-card" data-category="pastries">
                 <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/images%20(2).jpeg" class="card-image" alt="Pain au Chocolat">
                 <div class="card-content">
                     <h3>Pain au Chocolat</h3>
@@ -101,7 +104,7 @@
                     <button class="add-to-cart" data-item="Pain au Chocolat - 105 ETB">Add to Cart</button>
                 </div>
             </div>
-            <div class="product-card" data-cat="cakes">
+            <div class="product-card" data-category="cakes">
                 <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/Mocha-Cake-Recipe-Card.jpg" class="card-image" alt="Mocha Cake">
                 <div class="card-content">
                     <h3>Mocha Cake</h3>
@@ -110,7 +113,7 @@
                     <button class="add-to-cart" data-item="Mocha Cake - 350 ETB">Add to Cart</button>
                 </div>
             </div>
-            <div class="product-card" data-cat="cakes">
+            <div class="product-card" data-category="cakes">
                 <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/Yellow-Cake25-1.jpg" class="card-image" alt="Yellow Cake">
                 <div class="card-content">
                     <h3>Yellow Cake</h3>
@@ -119,7 +122,7 @@
                     <button class="add-to-cart" data-item="Yellow Cake - 280 ETB">Add to Cart</button>
                 </div>
             </div>
-            <div class="product-card" data-cat="cakes">
+            <div class="product-card" data-category="cakes">
                 <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/images%20(4).jpeg" class="card-image" alt="Honey Cake">
                 <div class="card-content">
                     <h3>Honey Cake</h3>
@@ -128,7 +131,7 @@
                     <button class="add-to-cart" data-item="Honey Cake - 280 ETB">Add to Cart</button>
                 </div>
             </div>
-            <div class="product-card" data-cat="breads">
+            <div class="product-card" data-category="ethiopian">
                 <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/images%20(6).jpeg" class="card-image" alt="Himbasha">
                 <div class="card-content">
                     <h3>Himbasha</h3>
@@ -137,28 +140,87 @@
                     <button class="add-to-cart" data-item="Himbasha - 150 ETB">Add to Cart</button>
                 </div>
             </div>
+            <div class="product-card" data-category="ethiopian">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/images%20(3).jpeg" class="card-image" alt="Dabo Kolo">
+                <div class="card-content">
+                    <h3>Dabo Kolo</h3>
+                    <p>Crunchy snack bites</p>
+                    <div class="price">ETB 60</div>
+                    <button class="add-to-cart" data-item="Dabo Kolo - 60 ETB">Add to Cart</button>
+                </div>
+            </div>
         </div>
     </section>
 </main>
 
-<footer>
+<footer class="main-footer">
     <div class="container">
-        <p>© 2026 Rihana Meer's — Artisan Bakery & Catering | Addis Ababa, Ethiopia</p>
-        <p>🥐 Handcrafted with love</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">🌸 Riha's Bakehouse</div>
+                <p class="tagline">Bites to Happiness</p>
+                <p>Artisan Bakery & Catering<br>Addis Ababa, Ethiopia</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="menu.html">Our Menu</a></li>
+                    <li><a href="catering.html">Catering</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="order.html">Order Online</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Opening Hours</h4>
+                <ul class="hours">
+                    <li>Monday - Saturday</li>
+                    <li><strong>7:00 AM - 8:00 PM</strong></li>
+                    <li>Sunday</li>
+                    <li><strong>8:00 AM - 6:00 PM</strong></li>
+                    <li>Holidays</li>
+                    <li><strong>8:00 AM - 5:00 PM</strong></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <ul class="contact-info">
+                    <li><i class="fas fa-phone"></i> +251 79 11 069 818</li>
+                    <li><i class="fas fa-envelope"></i> rihasbakehouse@qmail.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Bole Subcity, near Atlas</li>
+                </ul>
+                <div class="payment-badge">
+                    <span>We Accept:</span>
+                    <i class="fas fa-money-bill-wave"></i>
+                    <i class="fas fa-mobile-alt"></i>
+                    <i class="fas fa-university"></i>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Riha's Bakehouse — Bites to Happiness | Artisan Bakery & Catering | Addis Ababa, Ethiopia</p>
+            <p class="footer-heart">✨ Handcrafted with love & passion | Fresh Daily Since 2020 ✨</p>
+        </div>
     </div>
 </footer>
 
 <div id="toastMsg" class="toast-msg">✓ Added to cart</div>
 <script src="js/main.js"></script>
 <script>
-    // Category Filter
-    document.querySelectorAll('.cat-btn').forEach(btn => {
+    document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', function() {
-            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             this.classList.add('active');
-            const cat = this.getAttribute('data-cat');
+            const category = this.dataset.category;
             document.querySelectorAll('.product-card').forEach(card => {
-                if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+                if (category === 'all' || card.dataset.category === category) {
                     card.style.display = 'block';
                 } else {
                     card.style.display = 'none';

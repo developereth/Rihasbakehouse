@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rihana Meer's | Menu | Fresh Baked Goods</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="main-header">
+    <div class="container">
+        <div class="logo"><a href="index.html"><h1>🌸 RIHANA MEER'S</h1><span>Artisan Bakery & Catering</span></a></div>
+        <nav class="desktop-nav">
+            <a href="index.html">Home</a><a href="about.html">About</a>
+            <a href="menu.html" class="active">Menu</a><a href="catering.html">Catering</a>
+            <a href="order.html">Order</a><a href="contact.html">Contact</a>
+        </nav>
+        <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+        <a href="order.html" class="btn-order">Order Now</a>
+    </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header"><h3>🌸 Rihana Meer's</h3><button class="close-menu" id="closeMenuBtn"><i class="fas fa-times"></i></button></div>
+    <div class="mobile-nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="menu.html">Menu</a><a href="catering.html">Catering</a><a href="order.html">Order</a><a href="contact.html">Contact</a></div>
+    <div class="mobile-nav-footer"><p><i class="fas fa-phone"></i> +251 79 11 069 818</p></div>
+</div>
+<div class="overlay" id="overlay"></div>
+
+<main>
+    <section class="container">
+        <h2 class="section-title">🥐 Our Signature Collection</h2>
+        <div class="cards-grid">
+            <div class="product-card"><img src="https://images.unsplash.com/photo-1549751438-b96205fb74ff?w=600&h=400&fit=crop" class="card-image"><div class="card-content"><h3>Baguette Classique</h3><p>Crispy crust, soft crumb</p><div class="price">ETB 70</div><button class="add-to-cart" data-item="Baguette - 70 ETB">Add to Cart</button></div></div>
+            <div class="product-card"><img src="https://images.unsplash.com/photo-1586444248902-2f0ed0f7f8b6?w=600&h=400&fit=crop" class="card-image"><div class="card-content"><h3>Focaccia Rosmarino</h3><p>Rosemary & sea salt</p><div class="price">ETB 110</div><button class="add-to-cart" data-item="Focaccia - 110 ETB">Add to Cart</button></div></div>
+            <div class="product-card"><img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=600&h=400&fit=crop" class="card-image"><div class="card-content"><h3>Cinnamon Bun</h3><p>Swirled with cinnamon glaze</p><div class="price">ETB 85</div><button class="add-to-cart" data-item="Cinnamon Bun - 85 ETB">Add to Cart</button></div></div>
+            <div class="product-card"><img src="https://images.unsplash.com/photo-1623334044301-6c9f9e6a1d2c?w=600&h=400&fit=crop" class="card-image"><div class="card-content"><h3>Apple Turnover</h3><p>Caramelized apples</p><div class="price">ETB 100</div><button class="add-to-cart" data-item="Apple Turnover - 100 ETB">Add to Cart</button></div></div>
+            <div class="product-card"><img src="https://images.unsplash.com/photo-1585478259715-1f3d6b7cfd3c?w=600&h=400&fit=crop" class="card-image"><div class="card-content"><h3>Ethiopian Dabo Kolo</h3><p>Crunchy snack bites</p><div class="price">ETB 60</div><button class="add-to-cart" data-item="Dabo Kolo - 60 ETB">Add to Cart</button></div></div>
+            <div class="product-card"><img src="https://images.unsplash.com/photo-1549741422-8c6f7d9f8b4c?w=600&h=400&fit=crop" class="card-image"><div class="card-content"><h3>Pain au Chocolat</h3><p>Dark chocolate filled</p><div class="price">ETB 105</div><button class="add-to-cart" data-item="Pain au Chocolat - 105 ETB">Add to Cart</button></div></div>
+            <div class="product-card"><img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?w=600&h=400&fit=crop" class="card-image"><div class="card-content"><h3>Brioche</h3><p>Buttery, soft texture</p><div class="price">ETB 95</div><button class="add-to-cart" data-item="Brioche - 95 ETB">Add to Cart</button></div></div>
+            <div class="product-card"><img src="https://images.unsplash.com/photo-1586444248902-2f0ed0f7f8b6?w=600&h=400&fit=crop" class="card-image"><div class="card-content"><h3>Dark Rye Bread</h3><p>Nutty, earthy flavor</p><div class="price">ETB 130</div><button class="add-to-cart" data-item="Dark Rye - 130 ETB">Add to Cart</button></div></div>
+        </div>
+    </section>
+</main>
+
+<footer><p>© 2026 Rihana Meer's — Artisan Bakery & Catering | Addis Ababa, Ethiopia</p></footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

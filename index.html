@@ -1,73 +1,81 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Rihana Meer's - Premium Artisan Bakery & Catering in Addis Ababa, Ethiopia">
-    <meta name="theme-color" content="#f9e6ec">
-    <title>Rihana Meer's | Artisan Bakery & Catering | Addis Ababa</title>
-    
-    <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rihana Meer's - Premium Artisan Bakery & Catering in Addis Ababa">
+    <title>Rihana Meer's | Home | Artisan Bakery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="site-wrapper">
-    <!-- Mobile Sidebar Component -->
-    <div class="mobile-sidebar" id="mobileSidebar">
-        <div class="sidebar-header">
-            <h3>🌸 Rihana Meer's</h3>
-            <button class="close-sidebar" id="closeSidebarBtn"><i class="fas fa-times"></i></button>
+
+<header class="main-header">
+    <div class="container">
+        <div class="logo">
+            <a href="index.html"><h1>🌸 RIHANA MEER'S</h1><span>Artisan Bakery & Catering</span></a>
         </div>
-        <div class="sidebar-nav">
-            <a href="#" data-page="home" class="nav-link active"><i class="fas fa-home"></i> Home</a>
-            <a href="#" data-page="menu" class="nav-link"><i class="fas fa-bread-slice"></i> Menu</a>
-            <a href="#" data-page="catering" class="nav-link"><i class="fas fa-champagne-glasses"></i> Catering</a>
-            <a href="#" data-page="order" class="nav-link"><i class="fas fa-truck-fast"></i> Order Form</a>
-            <a href="#" data-page="contact" class="nav-link"><i class="fas fa-map-pin"></i> Contact & Map</a>
-        </div>
-        <div class="sidebar-footer">
-            <i class="fas fa-phone-alt"></i> +251 79 11 069 818<br>
-            <i class="fas fa-envelope"></i> rythamanager@qmail.com<br>
-            <i class="fas fa-location-dot"></i> Addis Ababa, Ethiopia<br>
-            <i class="fas fa-crown"></i> Owner & Head Baker: Rihana Meersa
-        </div>
+        <nav class="desktop-nav">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="menu.html">Menu</a>
+            <a href="catering.html">Catering</a>
+            <a href="order.html">Order</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+        <a href="order.html" class="btn-order">Order Now</a>
     </div>
+</header>
 
-    <div class="overlay" id="overlay"></div>
-
-    <div class="main-content">
-        <!-- Header Component -->
-        <div class="mobile-header">
-            <button class="menu-icon" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
-            <div class="logo-area">
-                <h1>🌸 RIHANA MEER'S</h1>
-                <p>ARTISAN BAKERY & CATERING</p>
-            </div>
-            <a href="#" class="order-cta" data-page="order"><i class="fas fa-shopping-bag"></i> Order</a>
-        </div>
-
-        <!-- Dynamic Page Content -->
-        <main id="pageContent"></main>
-        
-        <!-- Footer Component -->
-        <footer>
-            <p>© 2026 Rihana Meer's — Artisan Bakery & Catering | Addis Ababa, Ethiopia</p>
-            <p style="margin-top: 0.5rem;">✨ Handcrafted with love & passion | Premium Quality Since 2020 ✨</p>
-        </footer>
+<div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header"><h3>🌸 Rihana Meer's</h3><button class="close-menu" id="closeMenuBtn"><i class="fas fa-times"></i></button></div>
+    <div class="mobile-nav-links">
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="menu.html">Menu</a>
+        <a href="catering.html">Catering</a><a href="order.html">Order</a><a href="contact.html">Contact</a>
     </div>
+    <div class="mobile-nav-footer"><p><i class="fas fa-phone"></i> +251 79 11 069 818</p></div>
 </div>
+<div class="overlay" id="overlay"></div>
 
-<!-- Toast Notification -->
-<div id="toastMsg" class="toast-msg">✓ Added to cart</div>
+<main>
+    <section class="hero">
+        <div class="container">
+            <h2>Artisan Breads,<br>Baked With Love ❤️</h2>
+            <p>Premium quality baked goods in the heart of Addis Ababa, Ethiopia</p>
+            <a href="menu.html" class="btn-primary">Explore Our Menu →</a>
+        </div>
+    </section>
 
-<!-- Scripts -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="js/data.js"></script>
-<script src="js/pages.js"></script>
-<script src="js/app.js"></script>
+    <section class="container">
+        <h2 class="section-title">🌸 Featured Delights</h2>
+        <div class="cards-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&h=400&fit=crop" class="card-image" alt="Croissant">
+                <div class="card-content"><h3>Butter Croissant</h3><p>Flaky, golden, 100% butter</p><div class="price">ETB 95</div><button class="add-to-cart" data-item="Butter Croissant - 95 ETB">Add to Cart</button></div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1585478259715-1f3d6b7cfd3c?w=600&h=400&fit=crop" class="card-image" alt="Sourdough">
+                <div class="card-content"><h3>Sourdough Boule</h3><p>Tangy, rustic crust</p><div class="price">ETB 120</div><button class="add-to-cart" data-item="Sourdough Boule - 120 ETB">Add to Cart</button></div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=400&fit=crop" class="card-image" alt="Himbasha">
+                <div class="card-content"><h3>Ethiopian Himbasha</h3><p>Spiced celebratory bread</p><div class="price">ETB 150</div><button class="add-to-cart" data-item="Himbasha - 150 ETB">Add to Cart</button></div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9582?w=600&h=400&fit=crop" class="card-image" alt="Honey Cake">
+                <div class="card-content"><h3>Honey Cake</h3><p>Moist, honey-infused</p><div class="price">ETB 280</div><button class="add-to-cart" data-item="Honey Cake - 280 ETB">Add to Cart</button></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Rihana Meer's — Artisan Bakery & Catering | Addis Ababa, Ethiopia</p>
+    <p style="margin-top: 8px;">✨ Handcrafted with love & passion ✨</p>
+</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>

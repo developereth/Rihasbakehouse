@@ -3,22 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Premium catering services in Addis Ababa - Corporate events, weddings, private celebrations with artisan breads and pastries">
-    <meta name="keywords" content="catering Addis Ababa, event catering, wedding cakes, corporate breakfast, Ethiopian catering">
-    <meta name="author" content="Rihana Meer's Bakery">
+    <meta name="description" content="Premium catering services for corporate events, weddings, and private celebrations">
     <meta name="theme-color" content="#FFF8F0">
-    <meta property="og:title" content="Catering | Rihana Meer's Artisan Bakery">
-    <meta property="og:description" content="Premium catering services for all occasions in Addis Ababa">
-    <meta property="og:type" content="website">
-    <title>Catering | Rihana Meer's | Artisan Bakery & Catering</title>
-    
+    <title>Catering | Rihana Meer's Bakery</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- Mobile Sidebar -->
 <div class="mobile-sidebar" id="mobileSidebar">
     <div class="sidebar-header">
         <h3>🥐 Rihana Meer's</h3>
@@ -31,7 +24,7 @@
         <a href="catering.html" class="active"><i class="fas fa-champagne-glasses"></i> Catering</a>
         <a href="contact.html"><i class="fas fa-map-pin"></i> Contact</a>
     </div>
-    <a href="order.html" class="sidebar-order-btn"><i class="fas fa-shopping-bag"></i> ORDER NOW <i class="fas fa-arrow-right"></i></a>
+    <a href="order.html" class="sidebar-order-btn"><i class="fas fa-shopping-bag"></i> ORDER NOW</a>
     <div class="sidebar-footer">
         <p><i class="fas fa-phone-alt"></i> +251 79 11 069 818</p>
         <p><i class="fas fa-envelope"></i> rythamanager@qmail.com</p>
@@ -40,13 +33,10 @@
 </div>
 <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-<!-- Header -->
 <header class="main-header">
     <div class="container">
         <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
-        <div class="logo">
-            <a href="index.html"><h1>🥐 RIHANA MEER'S</h1><span>Artisan Bakery & Catering</span></a>
-        </div>
+        <div class="logo"><a href="index.html"><h1>🥐 RIHANA MEER'S</h1><span>Artisan Bakery & Catering</span></a></div>
         <nav class="desktop-nav">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -54,184 +44,66 @@
             <a href="catering.html" class="active">Catering</a>
             <a href="contact.html">Contact</a>
         </nav>
-        <a href="order.html" class="btn-order"><i class="fas fa-shopping-bag"></i> Order Now</a>
+        <a href="order.html" class="btn-order"><i class="fas fa-shopping-bag"></i> Order</a>
     </div>
 </header>
 
 <main>
-    <!-- Page Hero with Your Image -->
-    <section class="page-hero" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/images%20(6).jpeg');">
+    <section class="page-hero" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), url('https://raw.githubusercontent.com/developereth/Rihasbakehouse/e25556f86fa35220a0a562366f5642f49d7dc7b2/360_F_996648613_JeLaqLaREMrfl1DwqWluZPTdFZurAo3a.jpg'); background-size: cover; background-position: center;">
         <div class="container">
-            <h1>🎉 Premium Catering Services</h1>
-            <p>Making your events memorable with artisan baked goods</p>
+            <h1>Catering Services</h1>
+            <p>Making your events memorable</p>
         </div>
     </section>
 
-    <!-- Catering Packages -->
     <section class="container">
-        <h2 class="section-title">Our Catering Packages</h2>
         <div class="cards-grid">
-            <!-- Package 1 -->
-            <div class="product-card" data-package="corporate">
-                <div class="card-image-wrapper">
-                    <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/images%20(1).jpeg" class="card-image" alt="Corporate Breakfast">
-                    <div class="card-overlay">
-                        <button class="quick-view catering-inquiry" data-package="Corporate Breakfast">Request Quote</button>
-                    </div>
-                </div>
+            <div class="product-card">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/images%20(1).jpeg" class="card-image" alt="Corporate">
                 <div class="card-content">
-                    <i class="fas fa-briefcase"></i>
                     <h3>Corporate Breakfast</h3>
-                    <p>Pastry boxes, fresh breads, premium coffee & tea service</p>
-                    <div class="price">Starting ETB 2,500</div>
-                    <ul class="feature-list">
-                        <li><i class="fas fa-check"></i> Serves 10-15 people</li>
-                        <li><i class="fas fa-check"></i> Free delivery within Bole</li>
-                        <li><i class="fas fa-check"></i> Customizable menu</li>
-                    </ul>
-                    <button class="add-to-cart catering-inquiry" data-package="Corporate Breakfast">Request Quote →</button>
+                    <p>Pastry boxes, fresh bread & coffee</p>
+                    <div class="price">From ETB 2,500</div>
+                    <button class="catering-inquiry">Request Quote</button>
                 </div>
             </div>
-
-            <!-- Package 2 -->
-            <div class="product-card" data-package="wedding">
-                <div class="card-image-wrapper">
-                    <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/Yellow-Cake25-1.jpg" class="card-image" alt="Wedding Sweets">
-                    <div class="card-overlay">
-                        <button class="quick-view catering-inquiry" data-package="Wedding Sweets">Request Quote</button>
-                    </div>
-                </div>
+            <div class="product-card">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/Yellow-Cake25-1.jpg" class="card-image" alt="Wedding">
                 <div class="card-content">
-                    <i class="fas fa-ring"></i>
-                    <h3>Wedding Sweets Table</h3>
-                    <p>Custom cake towers, dessert grazing, macarons & more</p>
+                    <h3>Wedding Sweets</h3>
+                    <p>Custom cake towers, dessert grazing</p>
                     <div class="price">Custom Package</div>
-                    <ul class="feature-list">
-                        <li><i class="fas fa-check"></i> 3-tier custom cake</li>
-                        <li><i class="fas fa-check"></i> Dessert bar setup</li>
-                        <li><i class="fas fa-check"></i> Free tasting session</li>
-                    </ul>
-                    <button class="add-to-cart catering-inquiry" data-package="Wedding Sweets">Request Quote →</button>
+                    <button class="catering-inquiry">Request Quote</button>
                 </div>
             </div>
-
-            <!-- Package 3 -->
-            <div class="product-card" data-package="private">
-                <div class="card-image-wrapper">
-                    <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/Mocha-Cake-Recipe-Card.jpg" class="card-image" alt="Private Celebration">
-                    <div class="card-overlay">
-                        <button class="quick-view catering-inquiry" data-package="Private Celebration">Request Quote</button>
-                    </div>
-                </div>
+            <div class="product-card">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/Mocha-Cake-Recipe-Card.jpg" class="card-image" alt="Private">
                 <div class="card-content">
-                    <i class="fas fa-party-horn"></i>
                     <h3>Private Celebrations</h3>
-                    <p>Buffet with Ethiopian & continental breads, pastries</p>
-                    <div class="price">Starting ETB 3,200</div>
-                    <ul class="feature-list">
-                        <li><i class="fas fa-check"></i> Full buffet setup</li>
-                        <li><i class="fas fa-check"></i> Professional staff included</li>
-                        <li><i class="fas fa-check"></i> Custom themed desserts</li>
-                    </ul>
-                    <button class="add-to-cart catering-inquiry" data-package="Private Celebration">Request Quote →</button>
+                    <p>Buffet with Ethiopian & continental breads</p>
+                    <div class="price">From ETB 3,200</div>
+                    <button class="catering-inquiry">Request Quote</button>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Why Choose Us -->
-    <section class="why-choose-us">
-        <div class="container">
-            <h2 class="section-title">✨ Why Choose Us?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-fresh"></i>
-                    <h3>Fresh Daily</h3>
-                    <p>All items baked fresh on the day of your event</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-customize"></i>
-                    <h3>Custom Menus</h3>
-                    <p>Tailored to your taste and dietary needs</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-truck"></i>
-                    <h3>Free Delivery</h3>
-                    <p>Within Addis Ababa for orders over ETB 5,000</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-star"></i>
-                    <h3>Premium Quality</h3>
-                    <p>Only the finest ingredients</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Catering Inquiry Form -->
-    <section class="container" id="cateringFormSection">
-        <div class="section-header">
-            <h2 class="section-title">📋 Request a Quote</h2>
-            <p>Tell us about your event and we'll create a custom menu for you</p>
-        </div>
-        
-        <div class="form-container">
+        <div class="catering-form">
+            <h3>Request a Catering Quote</h3>
             <form id="cateringForm">
                 <div class="form-row">
-                    <div class="form-group">
-                        <label><i class="fas fa-user"></i> Full Name *</label>
-                        <input type="text" id="catName" placeholder="Your name" required>
-                    </div>
-                    <div class="form-group">
-                        <label><i class="fas fa-envelope"></i> Email Address *</label>
-                        <input type="email" id="catEmail" placeholder="your@email.com" required>
-                    </div>
+                    <input type="text" id="catName" placeholder="Your Name" required>
+                    <input type="email" id="catEmail" placeholder="Your Email" required>
                 </div>
-                
                 <div class="form-row">
-                    <div class="form-group">
-                        <label><i class="fas fa-phone"></i> Phone Number</label>
-                        <input type="tel" id="catPhone" placeholder="+251 XX XXX XXXX">
-                    </div>
-                    <div class="form-group">
-                        <label><i class="fas fa-calendar"></i> Event Date</label>
-                        <input type="date" id="catDate">
-                    </div>
+                    <input type="tel" id="catPhone" placeholder="Phone Number">
+                    <select id="catEvent">
+                        <option>Corporate Event</option>
+                        <option>Wedding</option>
+                        <option>Private Party</option>
+                    </select>
                 </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label><i class="fas fa-champagne-glasses"></i> Event Type</label>
-                        <select id="catEvent">
-                            <option value="">Select event type</option>
-                            <option>Corporate Event</option>
-                            <option>Wedding / Anniversary</option>
-                            <option>Birthday Party</option>
-                            <option>Private Celebration</option>
-                            <option>Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label><i class="fas fa-users"></i> Guest Count</label>
-                        <select id="catGuests">
-                            <option value="">Select guest count</option>
-                            <option>10-25 guests</option>
-                            <option>26-50 guests</option>
-                            <option>51-100 guests</option>
-                            <option>100+ guests</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label><i class="fas fa-comment"></i> Special Requests</label>
-                    <textarea rows="4" id="catMsg" placeholder="Tell us about your vision, dietary restrictions, or specific requests..."></textarea>
-                </div>
-                
-                <button type="button" class="btn-primary btn-large" id="submitCateringBtn">
-                    <i class="fas fa-paper-plane"></i> Submit Inquiry
-                </button>
-                <p class="form-note">* We'll respond within 24 hours with a custom quote</p>
+                <textarea rows="3" id="catMsg" placeholder="Event details, guest count, preferences..."></textarea>
+                <button type="button" id="submitCateringBtn">Submit Inquiry</button>
             </form>
         </div>
     </section>
@@ -239,59 +111,22 @@
 
 <footer>
     <div class="container">
-        <div class="footer-content">
-            <div class="footer-col">
-                <h3>🥐 Rihana Meer's</h3>
-                <p>Artisan Bakery & Catering<br>Addis Ababa, Ethiopia</p>
-            </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="menu.html">Menu</a>
-                <a href="catering.html">Catering</a>
-            </div>
-            <div class="footer-col">
-                <h4>Hours</h4>
-                <p>Mon-Sat: 7am - 8pm</p>
-                <p>Sunday: 8am - 6pm</p>
-            </div>
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <p><i class="fas fa-phone"></i> +251 79 11 069 818</p>
-                <p><i class="fas fa-envelope"></i> rythamanager@qmail.com</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 Rihana Meer's — Artisan Bakery & Catering | Addis Ababa, Ethiopia</p>
-        </div>
+        <p>© 2026 Rihana Meer's — Artisan Bakery & Catering | Addis Ababa, Ethiopia</p>
+        <p>🥐 Handcrafted with love</p>
     </div>
 </footer>
 
-<div id="toastMsg" class="toast-msg">✓ Added to cart</div>
-
+<div id="toastMsg" class="toast-msg">✓ Request sent</div>
 <script src="js/main.js"></script>
 <script>
-    // Catering Form Submit Handler
     document.getElementById('submitCateringBtn')?.addEventListener('click', function() {
         const name = document.getElementById('catName')?.value;
-        const email = document.getElementById('catEmail')?.value;
-        
-        if (!name || !email) {
-            showToast('⚠️ Please enter your name and email');
-            return;
-        }
-        
-        showToast(`🎉 Thanks ${name}! We'll contact you within 24 hours.`);
-        
-        // Clear form
-        document.getElementById('catName').value = '';
-        document.getElementById('catEmail').value = '';
-        document.getElementById('catPhone').value = '';
-        document.getElementById('catDate').value = '';
-        document.getElementById('catEvent').value = '';
-        document.getElementById('catGuests').value = '';
-        document.getElementById('catMsg').value = '';
+        if (!name) { alert('Please enter your name'); return; }
+        showToast('✓ Catering request sent! We\'ll contact you soon.');
+        document.getElementById('cateringForm').reset();
+    });
+    document.querySelectorAll('.catering-inquiry').forEach(btn => {
+        btn.addEventListener('click', () => showToast('📋 Please fill the form below'));
     });
 </script>
 </body>

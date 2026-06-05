@@ -1,32 +1,57 @@
 /* ============================================
    RIHANA MEER'S BAKERY - MASTER JAVASCRIPT
+   WITH MOBILE SLIDE SIDEBAR
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Mobile Menu
+    // ========== MOBILE SLIDE SIDEBAR ==========
+    const mobileSidebar = document.getElementById('mobileSidebar');
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const closeMenuBtn = document.getElementById('closeMenuBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    const overlay = document.getElementById('overlay');
+    const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
     
-    function openMobileMenu() {
-        mobileNav.classList.add('open');
-        overlay.classList.add('active');
+    // Open Sidebar
+    function openSidebar() {
+        if (mobileSidebar) {
+            mobileSidebar.classList.add('open');
+        }
+        if (sidebarOverlay) {
+            sidebarOverlay.classList.add('active');
+        }
         document.body.style.overflow = 'hidden';
     }
     
-    function closeMobileMenu() {
-        mobileNav.classList.remove('open');
-        overlay.classList.remove('active');
+    // Close Sidebar
+    function closeSidebar() {
+        if (mobileSidebar) {
+            mobileSidebar.classList.remove('open');
+        }
+        if (sidebarOverlay) {
+            sidebarOverlay.classList.remove('active');
+        }
         document.body.style.overflow = '';
     }
     
-    if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileMenu);
-    if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMobileMenu);
-    if (overlay) overlay.addEventListener('click', closeMobileMenu);
+    // Event Listeners for Sidebar
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', openSidebar);
+    }
     
-    // Toast Notification
+    if (closeSidebarBtn) {
+        closeSidebarBtn.addEventListener('click', closeSidebar);
+    }
+    
+    if (sidebarOverlay) {
+        sidebarOverlay.addEventListener('click', closeSidebar);
+    }
+    
+    // Close sidebar when clicking on a link
+    document.querySelectorAll('.sidebar-nav a, .sidebar-order-btn').forEach(link => {
+        link.addEventListener('click', closeSidebar);
+    });
+    
+    // ========== TOAST NOTIFICATION ==========
     window.showToast = function(message) {
         let toast = document.querySelector('.toast');
         if (!toast) {
@@ -39,25 +64,32 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => toast.classList.remove('show'), 2500);
     };
     
-    // Add to Cart
+    // ========== ADD TO CART ==========
     document.querySelectorAll('.add-to-cart').forEach(btn => {
         btn.addEventListener('click', function(e) {
             const item = this.getAttribute('data-item') || 'Item';
-            showToast(`🍞 ${item} added to cart!`);
+            showToast(`🥐 ${item} added to cart!`);
         });
     });
     
-    // Active Navigation Link
+    // ========== ACTIVE NAVIGATION LINK ==========
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.desktop-nav a, .mobile-nav-links a').forEach(link => {
+    document.querySelectorAll('.desktop-nav a, .sidebar-nav a').forEach(link => {
         const linkHref = link.getAttribute('href');
         if (linkHref === currentPage) {
             link.classList.add('active');
         }
     });
+    
+    // ========== CATERING INQUIRY ==========
+    document.querySelectorAll('.catering-inquiry').forEach(btn => {
+        btn.addEventListener('click', function() {
+            showToast('📋 Please fill the catering form below');
+        });
+    });
 });
 
-// Google Maps
+// ========== GOOGLE MAPS (Contact Page) ==========
 function initMap() {
     const mapElement = document.getElementById('map');
     if (mapElement && typeof L !== 'undefined') {
@@ -83,4 +115,23 @@ if (document.getElementById('map')) {
         script.onload = initMap;
         document.head.appendChild(script);
     }
+}
+
+// ========== FORM SUBMISSIONS ==========
+function submitOrder() {
+    const name = document.getElementById('orderName')?.value;
+    if (!name) {
+        showToast('⚠️ Please enter your name');
+        return;
+    }
+    showToast(`✨ Thanks ${name}, order placed! We'll call you to confirm.`);
+}
+
+function sendMessage() {
+    const name = document.getElementById('contactName')?.value;
+    if (!name) {
+        showToast('⚠️ Please enter your name');
+        return;
+    }
+    showToast('📨 Message sent! We reply within 24 hours.');
 }

@@ -6,7 +6,6 @@
     <meta name="description" content="Contact Rihana Meer's Bakery in Addis Ababa">
     <meta name="theme-color" content="#FFF8F0">
     <title>Contact | Rihana Meer's Bakery</title>
-    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -14,7 +13,6 @@
 </head>
 <body>
 
-<!-- Mobile Sidebar -->
 <div class="mobile-sidebar" id="mobileSidebar">
     <div class="sidebar-header">
         <h3>🥐 Rihana Meer's</h3>
@@ -36,13 +34,10 @@
 </div>
 <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-<!-- Header -->
 <header class="main-header">
     <div class="container">
         <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
-        <div class="logo">
-            <a href="index.html"><h1>🥐 RIHANA MEER'S</h1><span>Artisan Bakery & Catering</span></a>
-        </div>
+        <div class="logo"><a href="index.html"><h1>🥐 RIHANA MEER'S</h1><span>Artisan Bakery & Catering</span></a></div>
         <nav class="desktop-nav">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -55,98 +50,51 @@
 </header>
 
 <main>
-    <!-- Simple Hero -->
-    <section class="page-hero">
+    <section class="page-hero" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), url('https://raw.githubusercontent.com/developereth/Rihasbakehouse/e25556f86fa35220a0a562366f5642f49d7dc7b2/360_F_996648613_JeLaqLaREMrfl1DwqWluZPTdFZurAo3a.jpg'); background-size: cover; background-position: center;">
         <div class="container">
-            <h1>📍 Contact Us</h1>
-            <p>Get in touch with Rihana Meer's Bakery</p>
+            <h1>Contact Us</h1>
+            <p>Get in touch with us</p>
         </div>
     </section>
 
-    <!-- Contact Cards -->
     <section class="contact-section">
         <div class="container">
             <div class="contact-cards">
                 <div class="contact-card">
-                    <div class="icon-circle">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
+                    <div class="icon-circle"><i class="fas fa-map-marker-alt"></i></div>
                     <h3>Visit Us</h3>
                     <p>Bole Subcity, near Atlas<br>Addis Ababa, Ethiopia</p>
                 </div>
-                
                 <div class="contact-card">
-                    <div class="icon-circle">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
+                    <div class="icon-circle"><i class="fas fa-phone-alt"></i></div>
                     <h3>Call Us</h3>
                     <p>+251 79 11 069 818</p>
                 </div>
-                
                 <div class="contact-card">
-                    <div class="icon-circle">
-                        <i class="fas fa-envelope"></i>
-                    </div>
+                    <div class="icon-circle"><i class="fas fa-envelope"></i></div>
                     <h3>Email Us</h3>
                     <p>rythamanager@qmail.com</p>
                 </div>
-                
                 <div class="contact-card">
-                    <div class="icon-circle">
-                        <i class="fas fa-clock"></i>
-                    </div>
+                    <div class="icon-circle"><i class="fas fa-clock"></i></div>
                     <h3>Hours</h3>
-                    <p>Mon-Sat: 7am - 8pm<br>Sunday: 8am - 6pm</p>
+                    <p>Mon-Sat: 7am-8pm<br>Sunday: 8am-6pm</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Social Media -->
-    <section class="social-section">
-        <div class="container">
-            <h2 class="section-title">Follow Us</h2>
             <div class="social-icons">
-                <a href="#" class="social-icon facebook" target="_blank">
-                    <i class="fab fa-facebook-f"></i>
-                    <span>Facebook</span>
-                </a>
-                <a href="#" class="social-icon instagram" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                    <span>Instagram</span>
-                </a>
-                <a href="#" class="social-icon telegram" target="_blank">
-                    <i class="fab fa-telegram-plane"></i>
-                    <span>Telegram</span>
-                </a>
-                <a href="#" class="social-icon twitter" target="_blank">
-                    <i class="fab fa-twitter"></i>
-                    <span>Twitter</span>
-                </a>
-                <a href="#" class="social-icon whatsapp" target="_blank">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>WhatsApp</span>
-                </a>
-                <a href="#" class="social-icon tiktok" target="_blank">
-                    <i class="fab fa-tiktok"></i>
-                    <span>TikTok</span>
-                </a>
+                <a href="#" class="social-icon fb"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon ig"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon tg"><i class="fab fa-telegram-plane"></i></a>
+                <a href="#" class="social-icon tw"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon wa"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-icon tt"><i class="fab fa-tiktok"></i></a>
             </div>
-        </div>
-    </section>
 
-    <!-- Map -->
-    <section class="map-section">
-        <div class="container">
             <div id="map"></div>
-        </div>
-    </section>
 
-    <!-- Simple Contact Form -->
-    <section class="form-section">
-        <div class="container">
-            <div class="form-box">
-                <h2>Send a Message</h2>
+            <div class="contact-form">
+                <h3>Send a Message</h3>
                 <form id="contactForm">
                     <div class="form-row">
                         <input type="text" id="contactName" placeholder="Your Name" required>
@@ -160,7 +108,6 @@
     </section>
 </main>
 
-<!-- Simple Footer -->
 <footer>
     <div class="container">
         <p>© 2026 Rihana Meer's — Artisan Bakery & Catering | Addis Ababa, Ethiopia</p>
@@ -169,36 +116,19 @@
 </footer>
 
 <div id="toastMsg" class="toast-msg">✓ Message sent</div>
-
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="js/main.js"></script>
 <script>
-    // Map
-    function initMap() {
-        const map = L.map('map').setView([9.02497, 38.74689], 14);
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-            attribution: '&copy; OpenStreetMap'
-        }).addTo(map);
-        L.marker([9.02497, 38.74689]).addTo(map)
-            .bindPopup('🥐 Rihana Meer\'s Bakery');
-    }
-    initMap();
-    
-    // Form Submit
+    const map = L.map('map').setView([9.02497, 38.74689], 14);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+    L.marker([9.02497, 38.74689]).addTo(map).bindPopup('🥐 Rihana Meer\'s Bakery');
+
     document.getElementById('sendContactBtn')?.addEventListener('click', function() {
         const name = document.getElementById('contactName')?.value;
         const email = document.getElementById('contactEmail')?.value;
-        const msg = document.getElementById('contactMsg')?.value;
-        
-        if (!name || !email || !msg) {
-            alert('Please fill all fields');
-            return;
-        }
-        
+        if (!name || !email) { alert('Please fill name and email'); return; }
         showToast('✓ Message sent! We\'ll reply soon.');
-        document.getElementById('contactName').value = '';
-        document.getElementById('contactEmail').value = '';
-        document.getElementById('contactMsg').value = '';
+        document.getElementById('contactForm').reset();
     });
 </script>
 </body>

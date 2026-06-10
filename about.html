@@ -28,7 +28,6 @@
             padding: 0 24px;
         }
 
-        /* Header */
         .main-header {
             background: #FFFFFF;
             box-shadow: 0 2px 20px rgba(0,0,0,0.05);
@@ -46,21 +45,25 @@
             padding: 16px 24px;
         }
 
-        .logo h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            color: #C44569;
-            letter-spacing: -0.5px;
+        .logo a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 55px;
+            width: auto;
+            display: block;
+            margin-bottom: 5px;
         }
 
         .logo span {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: #B0A1B5;
             display: block;
-        }
-
-        .logo a {
-            text-decoration: none;
+            letter-spacing: 1px;
         }
 
         .desktop-nav {
@@ -106,7 +109,6 @@
             cursor: pointer;
         }
 
-        /* Mobile Sidebar */
         .mobile-sidebar {
             position: fixed;
             top: 0;
@@ -148,6 +150,11 @@
             margin-bottom: 30px;
             padding-bottom: 15px;
             border-bottom: 1px solid #FFE0E7;
+        }
+
+        .sidebar-header h3 {
+            font-family: 'Playfair Display', serif;
+            color: #C44569;
         }
 
         .close-sidebar {
@@ -195,7 +202,6 @@
             color: #B0A1B5;
         }
 
-        /* Hero Section */
         .hero {
             position: relative;
             height: 40vh;
@@ -244,7 +250,6 @@
             opacity: 0.95;
         }
 
-        /* Love Branding Section */
         .love-branding {
             background: linear-gradient(135deg, #FFF5F7 0%, #FFE0E7 100%);
             padding: 60px 0 40px;
@@ -254,18 +259,18 @@
         .baked-badges {
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 50px;
             margin-bottom: 30px;
             flex-wrap: wrap;
         }
 
         .baked-badge {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 600;
             color: #C44569;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
         .baked-badge small {
@@ -291,13 +296,12 @@
         .heart-divider {
             display: flex;
             justify-content: center;
-            gap: 12px;
+            gap: 15px;
             margin: 30px 0;
-            color: #FFB8D2;
-            font-size: 1.2rem;
+            color: #C44569;
+            font-size: 1.3rem;
         }
 
-        /* About Section */
         .about-section {
             padding: 60px 0;
         }
@@ -381,7 +385,6 @@
             font-size: 1.2rem;
         }
 
-        /* Quote Section */
         .quote-section {
             background: linear-gradient(135deg, #FFF5F7 0%, #FFE0E7 100%);
             padding: 60px 0;
@@ -413,52 +416,53 @@
             font-weight: 500;
         }
 
-        /* Footer */
         .main-footer {
             background: #2D1B2E;
             color: #E8D9E5;
-            padding: 48px 0 24px;
+            padding: 60px 0 30px;
         }
 
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 50px;
+            margin-bottom: 50px;
         }
 
         .footer-logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             color: #FFB8D2;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
         .tagline {
             color: #FFB8D2;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
         .social-links {
             display: flex;
-            gap: 16px;
-            margin-top: 16px;
+            gap: 18px;
+            margin-top: 20px;
         }
 
         .social-links a {
             color: #E8D9E5;
-            font-size: 1.2rem;
-            transition: color 0.3s;
+            font-size: 1.3rem;
+            transition: all 0.3s;
         }
 
         .social-links a:hover {
             color: #FFB8D2;
+            transform: translateY(-3px);
         }
 
         .footer-col h4 {
             font-family: 'Playfair Display', serif;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             color: #FFB8D2;
+            font-size: 1.2rem;
         }
 
         .footer-col ul {
@@ -466,7 +470,7 @@
         }
 
         .footer-col li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .footer-col a {
@@ -482,26 +486,27 @@
         .contact-info li {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            margin-bottom: 12px;
         }
 
         .payment-badge {
-            margin-top: 20px;
+            margin-top: 25px;
             display: flex;
-            gap: 12px;
+            gap: 15px;
             align-items: center;
             flex-wrap: wrap;
         }
 
         .footer-bottom {
             text-align: center;
-            padding-top: 24px;
+            padding-top: 30px;
             border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
         }
 
         .footer-heart {
-            margin-top: 8px;
+            margin-top: 10px;
             color: #FFB8D2;
         }
 
@@ -516,7 +521,7 @@
                 font-size: 2.5rem;
             }
             .baked-badge {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
             .love-title {
                 font-size: 1.8rem;
@@ -530,6 +535,9 @@
             }
             .quote-card p {
                 font-size: 1.2rem;
+            }
+            .logo-img {
+                height: 45px;
             }
         }
     </style>
@@ -561,7 +569,7 @@
         <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
         <div class="logo">
             <a href="index.html">
-                <h1>🌸 RIHA'S BAKEHOUSE</h1>
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/59dfa04a9b1383bafff3cfb62a4f651a7692305d/2c4b42de-78e7-424c-bec7-a520ec8c13aa.png" alt="Riha's Bakehouse Logo" class="logo-img">
                 <span>Bites to Happiness</span>
             </a>
         </div>
@@ -576,7 +584,6 @@
 </header>
 
 <main>
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-bg" style="background-image: url('https://raw.githubusercontent.com/developereth/Rihasbakehouse/e25556f86fa35220a0a562366f5642f49d7dc7b2/360_F_996648613_JeLaqLaREMrfl1DwqWluZPTdFZurAo3a.jpg');"></div>
         <div class="hero-overlay-light"></div>
@@ -586,7 +593,6 @@
         </div>
     </section>
 
-    <!-- Love Branding Section -->
     <section class="love-branding">
         <div class="container">
             <div class="baked-badges">
@@ -603,7 +609,6 @@
         </div>
     </section>
 
-    <!-- About Content -->
     <section class="about-section">
         <div class="container">
             <div class="about-grid">
@@ -630,7 +635,6 @@
         </div>
     </section>
 
-    <!-- Quote Section -->
     <section class="quote-section">
         <div class="container">
             <div class="quote-card">
@@ -700,7 +704,6 @@
 </footer>
 
 <script>
-    // Mobile sidebar
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileSidebar = document.getElementById('mobileSidebar');
     const sidebarOverlay = document.getElementById('sidebarOverlay');

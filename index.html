@@ -3,12 +3,630 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Riha's Bakehouse - Bites to Happiness. Premium Artisan Bakery & Catering in Addis Ababa, Ethiopia">
+    <meta name="description" content="Riha's Bakehouse - Bites to Happiness. Premium Artisan Bakery in Addis Ababa, Ethiopia. Fresh tres leches, brownies, croissants baked daily with love.">
     <meta name="theme-color" content="#FFF5F7">
-    <title>Riha's Bakehouse | Bites to Happiness | Artisan Bakery & Catering</title>
+    <title>Riha's Bakehouse | Bites to Happiness | Artisan Bakery</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFF9FA;
+            color: #2D1B2E;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        .main-header {
+            background: #FFFFFF;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.95);
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+        }
+
+        .logo h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #C44569;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            font-size: 0.75rem;
+            color: #B0A1B5;
+            display: block;
+        }
+
+        .logo a {
+            text-decoration: none;
+        }
+
+        .desktop-nav {
+            display: flex;
+            gap: 32px;
+        }
+
+        .desktop-nav a {
+            text-decoration: none;
+            color: #4A3B4A;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .desktop-nav a:hover, .desktop-nav a.active {
+            color: #C44569;
+        }
+
+        .btn-order {
+            background: #C44569;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-order:hover {
+            background: #A83256;
+            transform: scale(1.02);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #C44569;
+            cursor: pointer;
+        }
+
+        /* Mobile Sidebar */
+        .mobile-sidebar {
+            position: fixed;
+            top: 0;
+            left: -280px;
+            width: 280px;
+            height: 100%;
+            background: white;
+            z-index: 2000;
+            transition: left 0.3s ease;
+            box-shadow: 2px 0 20px rgba(0,0,0,0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mobile-sidebar.open {
+            left: 0;
+        }
+
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1999;
+            display: none;
+        }
+
+        .sidebar-overlay.active {
+            display: block;
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #FFE0E7;
+        }
+
+        .close-sidebar {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .sidebar-nav a {
+            text-decoration: none;
+            color: #4A3B4A;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .sidebar-nav a.active {
+            color: #C44569;
+        }
+
+        .sidebar-order-btn {
+            background: #C44569;
+            color: white;
+            padding: 12px;
+            border-radius: 40px;
+            text-align: center;
+            text-decoration: none;
+            margin-top: auto;
+        }
+
+        .sidebar-footer {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #FFE0E7;
+            font-size: 12px;
+            color: #B0A1B5;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        .hero-overlay-light {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.45);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 16px;
+        }
+
+        .hero-content h1 span {
+            font-size: 3rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            margin-bottom: 32px;
+        }
+
+        .hero-btn {
+            background: #C44569;
+            color: white;
+            padding: 12px 32px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .hero-btn:hover {
+            background: #A83256;
+            transform: scale(1.02);
+        }
+
+        /* Welcome / Love Section */
+        .love-branding {
+            background: linear-gradient(135deg, #FFF5F7 0%, #FFE0E7 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .baked-badges {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .baked-badge {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #C44569;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .baked-badge small {
+            font-size: 0.9rem;
+            display: block;
+            color: #B0A1B5;
+        }
+
+        .love-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #2D1B2E;
+            margin-bottom: 16px;
+        }
+
+        .love-text {
+            max-width: 600px;
+            margin: 0 auto 20px;
+            color: #5A4A5A;
+            font-size: 1.1rem;
+        }
+
+        .love-quote {
+            font-style: italic;
+            color: #C44569;
+            font-weight: 500;
+            margin-top: 20px;
+        }
+
+        .heart-divider {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 30px 0;
+            color: #FFB8D2;
+            font-size: 1.2rem;
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #2D1B2E;
+            margin: 48px 0 32px;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 32px;
+            margin-bottom: 64px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(196,69,105,0.2);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover .card-image {
+            transform: scale(1.02);
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: #2D1B2E;
+        }
+
+        .card-content p {
+            font-size: 0.85rem;
+            color: #B0A1B5;
+            margin-bottom: 12px;
+        }
+
+        .price {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #C44569;
+            margin-bottom: 16px;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            background: #FFF0F3;
+            border: none;
+            padding: 10px;
+            border-radius: 40px;
+            font-weight: 600;
+            color: #C44569;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background: #C44569;
+            color: white;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 4000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 32px;
+            max-width: 500px;
+            width: 90%;
+            overflow: hidden;
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .modal-body {
+            padding: 24px;
+            text-align: center;
+        }
+
+        .modal-body h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #2D1B2E;
+            margin-bottom: 16px;
+        }
+
+        .modal-price {
+            font-size: 1.5rem;
+            color: #C44569;
+            font-weight: 700;
+            margin: 16px 0;
+        }
+
+        .modal-desc {
+            color: #5A4A5A;
+            margin-bottom: 16px;
+        }
+
+        .close-modal {
+            background: #C44569;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 16px;
+            width: 100%;
+        }
+
+        .close-modal:hover {
+            background: #A83256;
+        }
+
+        /* Footer */
+        .main-footer {
+            background: #2D1B2E;
+            color: #E8D9E5;
+            padding: 48px 0 24px;
+            margin-top: 48px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #FFB8D2;
+            margin-bottom: 12px;
+        }
+
+        .tagline {
+            color: #FFB8D2;
+            margin-bottom: 12px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .social-links a {
+            color: #E8D9E5;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #FFB8D2;
+        }
+
+        .footer-col h4 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 16px;
+            color: #FFB8D2;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col a {
+            color: #E8D9E5;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: #FFB8D2;
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .payment-badge {
+            margin-top: 20px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.8rem;
+        }
+
+        .footer-heart {
+            margin-top: 8px;
+            color: #FFB8D2;
+        }
+
+        .toast-msg {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #C44569;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-weight: 500;
+            z-index: 3000;
+            opacity: 0;
+            transition: all 0.3s;
+            pointer-events: none;
+        }
+
+        .toast-msg.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .desktop-nav, .btn-order {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .baked-badge {
+                font-size: 1.2rem;
+            }
+            .love-title {
+                font-size: 1.8rem;
+            }
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -21,7 +639,6 @@
         <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
         <a href="about.html"><i class="fas fa-heart"></i> About</a>
         <a href="menu.html"><i class="fas fa-bread-slice"></i> Menu</a>
-        <a href="catering.html"><i class="fas fa-champagne-glasses"></i> Catering</a>
         <a href="contact.html"><i class="fas fa-map-pin"></i> Contact</a>
     </div>
     <a href="order.html" class="sidebar-order-btn"><i class="fas fa-shopping-bag"></i> ORDER NOW</a>
@@ -46,7 +663,6 @@
             <a href="index.html" class="active">Home</a>
             <a href="about.html">About</a>
             <a href="menu.html">Menu</a>
-            <a href="catering.html">Catering</a>
             <a href="contact.html">Contact</a>
         </nav>
         <a href="order.html" class="btn-order"><i class="fas fa-shopping-bag"></i> Order Now</a>
@@ -54,59 +670,98 @@
 </header>
 
 <main>
-    <!-- Hero Section with YOUR Image -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-bg" style="background-image: url('https://raw.githubusercontent.com/developereth/Rihasbakehouse/e25556f86fa35220a0a562366f5642f49d7dc7b2/360_F_996648613_JeLaqLaREMrfl1DwqWluZPTdFZurAo3a.jpg');"></div>
         <div class="hero-overlay-light"></div>
         <div class="container hero-content">
             <h1>Bites to Happiness <span>🌸</span></h1>
-            <p>Artisan Bakery & Catering in the heart of Addis Ababa</p>
+            <p>Artisan Bakery in the heart of Addis Ababa</p>
             <a href="menu.html" class="hero-btn">Explore Our Menu →</a>
         </div>
     </section>
 
+    <!-- Love Branding Section -->
+    <section class="love-branding">
+        <div class="container">
+            <div class="baked-badges">
+                <div class="baked-badge">baked daily <small>with care</small></div>
+                <div class="baked-badge">made with <small>love</small></div>
+                <div class="baked-badge">BAKEHOUSE <small>bites to happiness</small></div>
+            </div>
+            <h2 class="love-title">🌸 Welcome to Riha's Bakehouse</h2>
+            <p class="love-text">Welcome to our cozy bakehouse, where every bite is made with love.<br>
+            The warm scent of vanilla, brown sugar, butter, and sweetness fills the air—just like home.</p>
+            <p class="love-quote">✨ Made with love, baked for you. ✨</p>
+            <div class="heart-divider">
+                <i class="fas fa-heart"></i> <i class="fas fa-heart"></i> <i class="fas fa-heart"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Delights with GALLERY IMAGES -->
     <section class="container">
         <h2 class="section-title">🌸 Featured Delights</h2>
-        <div class="cards-grid">
-            <div class="product-card">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/images%20(1).jpeg" class="card-image" alt="Croissant">
+        <div class="cards-grid" id="featuredGrid">
+            <!-- Featured Item 1 - Gallery Image 1 -->
+            <div class="product-card" data-name="Tres Leches Classic" data-price="300" data-desc="Classic three milk cake, light and creamy. Our signature dessert!">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/e4eadb02b317c943716c5209bee5d738b26f97fd/a8195a03-8053-46a3-9f19-478ee8cfe290.png" class="card-image" alt="Tres Leches Classic">
                 <div class="card-content">
-                    <h3>Butter Croissant</h3>
-                    <p>Flaky, golden, 100% butter</p>
-                    <div class="price">ETB 95</div>
-                    <button class="add-to-cart" data-item="Butter Croissant - 95 ETB">Add to Cart</button>
+                    <h3>Tres Leches Classic</h3>
+                    <p>Classic three milk cake, light and creamy</p>
+                    <div class="price">ETB 300 (Mini)</div>
+                    <button class="add-to-cart" data-item="Tres Leches Classic - 300 ETB">Add to Cart</button>
                 </div>
             </div>
-            <div class="product-card">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/download%20(1).jpeg" class="card-image" alt="Sourdough">
+
+            <!-- Featured Item 2 - Gallery Image 2 -->
+            <div class="product-card" data-name="Biscoff Tres Leches" data-price="400" data-desc="Caramelized biscoff cookie butter infused tres leches">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/e4eadb02b317c943716c5209bee5d738b26f97fd/6f0f6a58-9d9a-4464-99b0-5e3bb75ba5fe.png" class="card-image" alt="Biscoff Tres Leches">
                 <div class="card-content">
-                    <h3>Sourdough Boule</h3>
-                    <p>Tangy, rustic crust</p>
-                    <div class="price">ETB 120</div>
-                    <button class="add-to-cart" data-item="Sourdough Boule - 120 ETB">Add to Cart</button>
+                    <h3>Biscoff Tres Leches</h3>
+                    <p>Cookie butter infused tres leches</p>
+                    <div class="price">ETB 400 (Mini)</div>
+                    <button class="add-to-cart" data-item="Biscoff Tres Leches - 400 ETB">Add to Cart</button>
                 </div>
             </div>
-            <div class="product-card">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/Mocha-Cake-Recipe-Card.jpg" class="card-image" alt="Mocha Cake">
+
+            <!-- Featured Item 3 - Gallery Image 3 -->
+            <div class="product-card" data-name="Red Velvet Tres Leches" data-price="400" data-desc="Red velvet cake soaked in three milk mixture">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/e4eadb02b317c943716c5209bee5d738b26f97fd/56187b10-f18c-4a25-ba5c-143b79c1c14d.png" class="card-image" alt="Red Velvet Tres Leches">
                 <div class="card-content">
-                    <h3>Mocha Cake</h3>
-                    <p>Rich coffee-chocolate fusion</p>
-                    <div class="price">ETB 350</div>
-                    <button class="add-to-cart" data-item="Mocha Cake - 350 ETB">Add to Cart</button>
+                    <h3>Red Velvet Tres Leches</h3>
+                    <p>Red velvet with creamy milk soak</p>
+                    <div class="price">ETB 400 (Mini)</div>
+                    <button class="add-to-cart" data-item="Red Velvet Tres Leches - 400 ETB">Add to Cart</button>
                 </div>
             </div>
-            <div class="product-card">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/Yellow-Cake25-1.jpg" class="card-image" alt="Yellow Cake">
+
+            <!-- Featured Item 4 - Gallery Image 4 -->
+            <div class="product-card" data-name="Brownies" data-price="570" data-desc="Fudgy chocolate brownies, perfectly portioned">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/e4eadb02b317c943716c5209bee5d738b26f97fd/f09b25bc-1cd8-4677-aa18-a16044ef6b51~2.png" class="card-image" alt="Brownies">
                 <div class="card-content">
-                    <h3>Yellow Cake</h3>
-                    <p>Moist, buttery vanilla</p>
-                    <div class="price">ETB 280</div>
-                    <button class="add-to-cart" data-item="Yellow Cake - 280 ETB">Add to Cart</button>
+                    <h3>Brownies</h3>
+                    <p>Fudgy chocolate brownies</p>
+                    <div class="price">ETB 570 (Mini)</div>
+                    <button class="add-to-cart" data-item="Brownies - 570 ETB">Add to Cart</button>
                 </div>
             </div>
         </div>
     </section>
 </main>
+
+<!-- Modal -->
+<div id="itemModal" class="modal">
+    <div class="modal-content">
+        <img id="modalImage" class="modal-image" src="" alt="">
+        <div class="modal-body">
+            <h3 id="modalTitle"></h3>
+            <div class="modal-price" id="modalPrice"></div>
+            <p id="modalDesc" class="modal-desc"></p>
+            <button class="close-modal" id="closeModalBtn">Close</button>
+        </div>
+    </div>
+</div>
 
 <footer class="main-footer">
     <div class="container">
@@ -114,7 +769,7 @@
             <div class="footer-col">
                 <div class="footer-logo">🌸 Riha's Bakehouse</div>
                 <p class="tagline">Bites to Happiness</p>
-                <p>Artisan Bakery & Catering<br>Addis Ababa, Ethiopia</p>
+                <p>Artisan Bakery<br>Addis Ababa, Ethiopia</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
@@ -128,7 +783,6 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="menu.html">Our Menu</a></li>
-                    <li><a href="catering.html">Catering</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="order.html">Order Online</a></li>
                 </ul>
@@ -160,13 +814,84 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Riha's Bakehouse — Bites to Happiness | Artisan Bakery & Catering | Addis Ababa, Ethiopia</p>
+            <p>&copy; 2026 Riha's Bakehouse — Bites to Happiness | Artisan Bakery | Addis Ababa, Ethiopia</p>
             <p class="footer-heart">✨ Handcrafted with love & passion | Fresh Daily Since 2020 ✨</p>
         </div>
     </div>
 </footer>
 
 <div id="toastMsg" class="toast-msg">✓ Added to cart</div>
-<script src="js/main.js"></script>
+
+<script>
+    // Mobile sidebar
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileSidebar = document.getElementById('mobileSidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+
+    function openSidebar() {
+        mobileSidebar.classList.add('open');
+        sidebarOverlay.classList.add('active');
+    }
+
+    function closeSidebar() {
+        mobileSidebar.classList.remove('open');
+        sidebarOverlay.classList.remove('active');
+    }
+
+    mobileMenuBtn?.addEventListener('click', openSidebar);
+    closeSidebarBtn?.addEventListener('click', closeSidebar);
+    sidebarOverlay?.addEventListener('click', closeSidebar);
+
+    // Modal functionality
+    const modal = document.getElementById('itemModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalPrice = document.getElementById('modalPrice');
+    const modalDesc = document.getElementById('modalDesc');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+
+    function showModal(card) {
+        const name = card.dataset.name;
+        const price = card.dataset.price;
+        const desc = card.dataset.desc;
+        const imgSrc = card.querySelector('.card-image').src;
+
+        modalTitle.innerText = name;
+        modalImage.src = imgSrc;
+        modalDesc.innerText = desc || 'Freshly baked with love';
+        modalPrice.innerText = `ETB ${price}`;
+
+        modal.classList.add('active');
+    }
+
+    function closeModal() {
+        modal.classList.remove('active');
+    }
+
+    document.querySelectorAll('.product-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+            if (e.target.classList.contains('add-to-cart')) return;
+            showModal(this);
+        });
+    });
+
+    closeModalBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) closeModal();
+    });
+
+    // Add to cart toast
+    const toast = document.getElementById('toastMsg');
+    document.querySelectorAll('.add-to-cart').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 1500);
+        });
+    });
+</script>
 </body>
 </html>

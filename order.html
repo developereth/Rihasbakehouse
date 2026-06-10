@@ -28,7 +28,6 @@
             padding: 0 24px;
         }
 
-        /* Header */
         .main-header {
             background: #FFFFFF;
             box-shadow: 0 2px 20px rgba(0,0,0,0.05);
@@ -46,21 +45,25 @@
             padding: 16px 24px;
         }
 
-        .logo h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            color: #C44569;
-            letter-spacing: -0.5px;
+        .logo a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 55px;
+            width: auto;
+            display: block;
+            margin-bottom: 5px;
         }
 
         .logo span {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: #B0A1B5;
             display: block;
-        }
-
-        .logo a {
-            text-decoration: none;
+            letter-spacing: 1px;
         }
 
         .desktop-nav {
@@ -92,6 +95,10 @@
             gap: 8px;
         }
 
+        .btn-order.active {
+            background: #A83256;
+        }
+
         .btn-order:hover {
             background: #A83256;
             transform: scale(1.02);
@@ -106,7 +113,6 @@
             cursor: pointer;
         }
 
-        /* Mobile Sidebar */
         .mobile-sidebar {
             position: fixed;
             top: 0;
@@ -148,6 +154,11 @@
             margin-bottom: 30px;
             padding-bottom: 15px;
             border-bottom: 1px solid #FFE0E7;
+        }
+
+        .sidebar-header h3 {
+            font-family: 'Playfair Display', serif;
+            color: #C44569;
         }
 
         .close-sidebar {
@@ -195,7 +206,6 @@
             color: #B0A1B5;
         }
 
-        /* Hero Section */
         .hero {
             position: relative;
             height: 40vh;
@@ -244,7 +254,6 @@
             opacity: 0.95;
         }
 
-        /* Love Branding Section */
         .love-branding {
             background: linear-gradient(135deg, #FFF5F7 0%, #FFE0E7 100%);
             padding: 60px 0 40px;
@@ -254,18 +263,18 @@
         .baked-badges {
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 50px;
             margin-bottom: 30px;
             flex-wrap: wrap;
         }
 
         .baked-badge {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 600;
             color: #C44569;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
         .baked-badge small {
@@ -291,13 +300,12 @@
         .heart-divider {
             display: flex;
             justify-content: center;
-            gap: 12px;
+            gap: 15px;
             margin: 30px 0;
-            color: #FFB8D2;
-            font-size: 1.2rem;
+            color: #C44569;
+            font-size: 1.3rem;
         }
 
-        /* Contact Methods Section */
         .contact-methods {
             padding: 60px 0;
         }
@@ -366,7 +374,6 @@
         .method-card.whatsapp .method-icon i { color: #25D366; }
         .method-card.email .method-icon i { color: #2196F3; }
 
-        /* Menu Section */
         .menu-title {
             font-family: 'Playfair Display', serif;
             font-size: 2rem;
@@ -436,52 +443,53 @@
             color: #5A4A5A;
         }
 
-        /* Footer */
         .main-footer {
             background: #2D1B2E;
             color: #E8D9E5;
-            padding: 48px 0 24px;
+            padding: 60px 0 30px;
         }
 
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 50px;
+            margin-bottom: 50px;
         }
 
         .footer-logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             color: #FFB8D2;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
         .tagline {
             color: #FFB8D2;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
         .social-links {
             display: flex;
-            gap: 16px;
-            margin-top: 16px;
+            gap: 18px;
+            margin-top: 20px;
         }
 
         .social-links a {
             color: #E8D9E5;
-            font-size: 1.2rem;
-            transition: color 0.3s;
+            font-size: 1.3rem;
+            transition: all 0.3s;
         }
 
         .social-links a:hover {
             color: #FFB8D2;
+            transform: translateY(-3px);
         }
 
         .footer-col h4 {
             font-family: 'Playfair Display', serif;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             color: #FFB8D2;
+            font-size: 1.2rem;
         }
 
         .footer-col ul {
@@ -489,7 +497,7 @@
         }
 
         .footer-col li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .footer-col a {
@@ -505,26 +513,27 @@
         .contact-info li {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            margin-bottom: 12px;
         }
 
         .payment-badge {
-            margin-top: 20px;
+            margin-top: 25px;
             display: flex;
-            gap: 12px;
+            gap: 15px;
             align-items: center;
             flex-wrap: wrap;
         }
 
         .footer-bottom {
             text-align: center;
-            padding-top: 24px;
+            padding-top: 30px;
             border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
         }
 
         .footer-heart {
-            margin-top: 8px;
+            margin-top: 10px;
             color: #FFB8D2;
         }
 
@@ -539,10 +548,13 @@
                 font-size: 2.5rem;
             }
             .baked-badge {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
             .love-title {
                 font-size: 1.8rem;
+            }
+            .logo-img {
+                height: 45px;
             }
         }
     </style>
@@ -574,7 +586,7 @@
         <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
         <div class="logo">
             <a href="index.html">
-                <h1>🌸 RIHA'S BAKEHOUSE</h1>
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/59dfa04a9b1383bafff3cfb62a4f651a7692305d/2c4b42de-78e7-424c-bec7-a520ec8c13aa.png" alt="Riha's Bakehouse Logo" class="logo-img">
                 <span>Bites to Happiness</span>
             </a>
         </div>
@@ -589,7 +601,6 @@
 </header>
 
 <main>
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-bg" style="background-image: url('https://raw.githubusercontent.com/developereth/Rihasbakehouse/e25556f86fa35220a0a562366f5642f49d7dc7b2/360_F_996648613_JeLaqLaREMrfl1DwqWluZPTdFZurAo3a.jpg');"></div>
         <div class="hero-overlay-light"></div>
@@ -599,7 +610,6 @@
         </div>
     </section>
 
-    <!-- Love Branding Section -->
     <section class="love-branding">
         <div class="container">
             <div class="baked-badges">
@@ -615,42 +625,29 @@
         </div>
     </section>
 
-    <!-- Contact Methods Section (Call, WhatsApp, Email only) -->
     <section class="contact-methods">
         <div class="container">
             <div class="methods-grid">
-                <!-- Direct Call -->
                 <a href="tel:+2517911069818" class="method-card call">
-                    <div class="method-icon">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
+                    <div class="method-icon"><i class="fas fa-phone-alt"></i></div>
                     <h3>📞 Direct Call</h3>
                     <p>Call us directly to place your order. We're ready to help!</p>
                     <div class="method-btn">Call Now</div>
                 </a>
-
-                <!-- WhatsApp -->
                 <a href="https://wa.me/2517911069818?text=Hello%20Riha's%20Bakehouse%2C%20I'd%20like%20to%20place%20an%20order%21" target="_blank" class="method-card whatsapp">
-                    <div class="method-icon">
-                        <i class="fab fa-whatsapp"></i>
-                    </div>
+                    <div class="method-icon"><i class="fab fa-whatsapp"></i></div>
                     <h3>💬 WhatsApp</h3>
                     <p>Send us a message on WhatsApp with your order details.</p>
                     <div class="method-btn">Message on WhatsApp</div>
                 </a>
-
-                <!-- Email -->
                 <a href="mailto:rihasbakehouse@qmail.com?subject=Order%20from%20Riha's%20Bakehouse&body=Hello%2C%20I'd%20like%20to%20place%20an%20order%3A%0A%0A" class="method-card email">
-                    <div class="method-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
+                    <div class="method-icon"><i class="fas fa-envelope"></i></div>
                     <h3>✉️ Email</h3>
                     <p>Email us your order and we'll reply within 2 hours.</p>
                     <div class="method-btn">Send Email</div>
                 </a>
             </div>
 
-            <!-- Menu Items Reference -->
             <h3 class="menu-title">🍰 Our Menu (Prices for Mini Size)</h3>
             <div class="items-grid">
                 <div class="menu-item-card">
@@ -779,7 +776,6 @@
 </footer>
 
 <script>
-    // Mobile sidebar
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileSidebar = document.getElementById('mobileSidebar');
     const sidebarOverlay = document.getElementById('sidebarOverlay');

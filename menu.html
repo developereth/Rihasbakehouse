@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Explore our artisan bakery menu - fresh breads, pastries, cakes, Ethiopian specialties, pizzas, and more">
+    <meta name="description" content="Riha's Bakehouse - Bites to Happiness. Artisan tres leches, brownies, tiramisu baked fresh daily with love.">
     <meta name="theme-color" content="#FFF5F7">
     <title>Menu | Riha's Bakehouse | Bites to Happiness</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -28,6 +28,7 @@
             padding: 0 24px;
         }
 
+        /* Header */
         .main-header {
             background: #FFFFFF;
             box-shadow: 0 2px 20px rgba(0,0,0,0.05);
@@ -105,6 +106,7 @@
             cursor: pointer;
         }
 
+        /* Mobile Sidebar */
         .mobile-sidebar {
             position: fixed;
             top: 0;
@@ -193,103 +195,113 @@
             color: #B0A1B5;
         }
 
-        .hero {
-            position: relative;
-            height: 40vh;
-            min-height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* Hero / Welcome Section */
+        .welcome-section {
+            background: linear-gradient(135deg, #FFF5F7 0%, #FFE0E7 100%);
+            padding: 60px 0 40px;
             text-align: center;
-            color: white;
         }
 
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            z-index: 0;
+        .baked-badges {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
         }
 
-        .hero-overlay-light {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.4);
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-content h1 {
+        .baked-badge {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #C44569;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .baked-badge small {
+            font-size: 0.9rem;
+            display: block;
+            color: #B0A1B5;
+        }
+
+        .welcome-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #2D1B2E;
             margin-bottom: 16px;
         }
 
-        .hero-content p {
-            font-size: 1.2rem;
-            opacity: 0.95;
+        .welcome-text {
+            max-width: 600px;
+            margin: 0 auto 20px;
+            color: #5A4A5A;
+            font-size: 1.1rem;
         }
 
-        .category-filters {
+        .welcome-quote {
+            font-style: italic;
+            color: #C44569;
+            font-weight: 500;
+            margin-top: 20px;
+        }
+
+        .heart-divider {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
             gap: 12px;
-            margin: 48px 0 32px;
+            margin: 30px 0;
+            color: #FFB8D2;
+            font-size: 1.2rem;
         }
 
-        .filter-btn {
-            background: #FFF0F3;
-            border: none;
-            padding: 10px 24px;
-            border-radius: 40px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            color: #4A3B4A;
-            cursor: pointer;
-            transition: all 0.3s;
+        /* Menu Header */
+        .menu-header {
+            text-align: center;
+            margin: 48px 0 24px;
         }
 
-        .filter-btn.active, .filter-btn:hover {
-            background: #C44569;
-            color: white;
+        .menu-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #2D1B2E;
         }
 
+        .menu-header p {
+            color: #B0A1B5;
+        }
+
+        /* Cards Grid */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 32px;
             margin-bottom: 64px;
         }
 
         .product-card {
             background: white;
-            border-radius: 20px;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
         }
 
         .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(196,69,105,0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(196,69,105,0.2);
         }
 
         .card-image {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover .card-image {
+            transform: scale(1.02);
         }
 
         .card-content {
@@ -298,152 +310,181 @@
 
         .card-content h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 8px;
             color: #2D1B2E;
         }
 
-        .card-content p {
-            font-size: 0.85rem;
-            color: #B0A1B5;
-            margin-bottom: 12px;
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin: 12px 0;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
         .price {
             font-weight: 700;
-            font-size: 1.3rem;
+            font-size: 1rem;
             color: #C44569;
+            background: #FFF0F3;
+            padding: 4px 10px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .price-large {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #C44569;
+        }
+
+        .size-badge {
+            font-size: 0.7rem;
+            background: #FFE0E7;
+            padding: 2px 8px;
+            border-radius: 12px;
+            color: #A83256;
+        }
+
+        .tin-note {
+            font-size: 0.7rem;
+            color: #B0A1B5;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 4000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 32px;
+            max-width: 500px;
+            width: 90%;
+            overflow: hidden;
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .modal-body {
+            padding: 24px;
+            text-align: center;
+        }
+
+        .modal-body h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #2D1B2E;
             margin-bottom: 16px;
         }
 
-        .add-to-cart {
-            width: 100%;
-            background: #FFF0F3;
-            border: none;
-            padding: 10px;
-            border-radius: 40px;
-            font-weight: 600;
-            color: #C44569;
-            cursor: pointer;
-            transition: all 0.3s;
+        .modal-prices {
+            background: #FFF5F7;
+            padding: 16px;
+            border-radius: 20px;
+            margin: 16px 0;
         }
 
-        .add-to-cart:hover {
+        .modal-prices p {
+            margin: 8px 0;
+            font-weight: 500;
+        }
+
+        .modal-note {
+            color: #C44569;
+            font-size: 0.85rem;
+            margin-top: 12px;
+        }
+
+        .close-modal {
             background: #C44569;
             color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 16px;
+            width: 100%;
         }
 
-        .main-footer {
+        .close-modal:hover {
+            background: #A83256;
+        }
+
+        /* Footer Love Section */
+        .love-footer {
             background: #2D1B2E;
             color: #E8D9E5;
             padding: 48px 0 24px;
-            margin-top: 48px;
+            text-align: center;
         }
 
-        .footer-grid {
+        .love-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto 40px;
         }
 
-        .footer-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
+        .love-item {
+            text-align: center;
+        }
+
+        .love-item i {
+            font-size: 2rem;
             color: #FFB8D2;
             margin-bottom: 12px;
         }
 
-        .tagline {
-            color: #FFB8D2;
-            margin-bottom: 12px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 16px;
-            margin-top: 16px;
-        }
-
-        .social-links a {
-            color: #E8D9E5;
-            font-size: 1.2rem;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: #FFB8D2;
-        }
-
-        .footer-col h4 {
+        .love-item h4 {
             font-family: 'Playfair Display', serif;
-            margin-bottom: 16px;
-            color: #FFB8D2;
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col li {
             margin-bottom: 8px;
         }
 
-        .footer-col a {
-            color: #E8D9E5;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-col a:hover {
-            color: #FFB8D2;
-        }
-
-        .contact-info li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .payment-badge {
-            margin-top: 20px;
-            display: flex;
-            gap: 12px;
-            align-items: center;
-            flex-wrap: wrap;
+        .thankyou {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
         }
 
         .footer-bottom {
-            text-align: center;
-            padding-top: 24px;
             border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 24px;
             font-size: 0.8rem;
-        }
-
-        .footer-heart {
-            margin-top: 8px;
-            color: #FFB8D2;
-        }
-
-        .toast-msg {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%) translateY(100px);
-            background: #C44569;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 40px;
-            font-weight: 500;
-            z-index: 3000;
-            opacity: 0;
-            transition: all 0.3s;
-            pointer-events: none;
-        }
-
-        .toast-msg.show {
-            transform: translateX(-50%) translateY(0);
-            opacity: 1;
         }
 
         @media (max-width: 768px) {
@@ -453,15 +494,14 @@
             .mobile-menu-btn {
                 display: block;
             }
-            .hero-content h1 {
+            .welcome-title {
                 font-size: 2rem;
             }
-            .category-filters {
-                gap: 8px;
+            .baked-badge {
+                font-size: 1.2rem;
             }
-            .filter-btn {
-                padding: 6px 16px;
-                font-size: 0.8rem;
+            .cards-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -505,262 +545,191 @@
 </header>
 
 <main>
-    <section class="hero">
-        <div class="hero-bg" style="background-image: url('https://raw.githubusercontent.com/developereth/Rihasbakehouse/e25556f86fa35220a0a562366f5642f49d7dc7b2/360_F_996648613_JeLaqLaREMrfl1DwqWluZPTdFZurAo3a.jpg');"></div>
-        <div class="hero-overlay-light"></div>
-        <div class="container hero-content">
-            <h1>Our Menu</h1>
-            <p>Freshly baked daily with love | Artisan Italian & Ethiopian Cuisine</p>
+    <!-- Welcome & Love Section -->
+    <section class="welcome-section">
+        <div class="container">
+            <div class="baked-badges">
+                <div class="baked-badge">baked daily <small>with care</small></div>
+                <div class="baked-badge">made with <small>love</small></div>
+                <div class="baked-badge">BAKEHOUSE <small>bites to happiness</small></div>
+            </div>
+            <h1 class="welcome-title">🌸 Riha's Bakehouse</h1>
+            <p class="welcome-text">Welcome to our cozy bakehouse, where every bite is made with love.<br>
+            The warm scent of vanilla, brown sugar, butter, and sweetness fills the air—just like home.</p>
+            <p class="welcome-quote">✨ Made with love, baked for you. ✨</p>
+            <div class="heart-divider">
+                <i class="fas fa-heart"></i> <i class="fas fa-heart"></i> <i class="fas fa-heart"></i>
+            </div>
         </div>
     </section>
 
+    <!-- Menu Section -->
     <section class="container">
-        <div class="category-filters">
-            <button class="filter-btn active" data-category="all">All Items</button>
-            <button class="filter-btn" data-category="pastry">🥐 Pastry & Cakes</button>
-            <button class="filter-btn" data-category="breads">🍞 Breads</button>
-            <button class="filter-btn" data-category="ethiopian">🇪🇹 Ethiopian Corner</button>
-            <button class="filter-btn" data-category="pizza">🍕 Pizza</button>
-            <button class="filter-btn" data-category="sandwich">🥪 Sandwiches & Burgers</button>
-            <button class="filter-btn" data-category="main">🍽️ Main Courses</button>
-            <button class="filter-btn" data-category="breakfast">🍳 Breakfast</button>
-            <button class="filter-btn" data-category="pasta">🍝 Pasta</button>
-            <button class="filter-btn" data-category="beverages">☕ Beverages</button>
+        <div class="menu-header">
+            <h2>🍰 MENU</h2>
+            <p>MINI SIZE • MEDIUM • LARGE</p>
         </div>
 
         <div class="cards-grid" id="menuGrid">
-            <!-- IMAGE 1: 32be262a-b282-49ab-83d3-d4d2bc97f7c7.png - Pastry & Cakes section -->
-            <div class="product-card" data-category="pastry">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/32be262a-b282-49ab-83d3-d4d2bc97f7c7.png" class="card-image" alt="Oreo Cheesecake">
+            <!-- TRES LECHES CLASSIC -->
+            <div class="product-card" data-name="Tres Leches Classic" data-mini="300" data-medium="700" data-large="1200" data-desc="Classic three milk cake, light and creamy">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/32be262a-b282-49ab-83d3-d4d2bc97f7c7.png" class="card-image" alt="Tres Leches Classic">
                 <div class="card-content">
-                    <h3>Oreo Cheesecake</h3>
-                    <p>Creamy cheesecake with Oreo crust</p>
-                    <div class="price">ETB 390</div>
-                    <button class="add-to-cart" data-item="Oreo Cheesecake - 390 ETB">Add to Cart</button>
+                    <h3>TRES LECHES CLASSIC</h3>
+                    <div class="price-row">
+                        <span class="price">Mini – 300</span>
+                        <span class="price">Medium – 700</span>
+                        <span class="price">Large – 1200</span>
+                    </div>
+                    <div class="tin-note">✨ Our mini desserts come in a cozy tin!</div>
                 </div>
             </div>
 
-            <!-- IMAGE 2: 4cc14e42-3206-4631-baea-9eafce52d156.png - Pastry & Cakes section -->
-            <div class="product-card" data-category="pastry">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/4cc14e42-3206-4631-baea-9eafce52d156.png" class="card-image" alt="Red Velvet Cake">
+            <!-- BISCOFF TRES LECHES -->
+            <div class="product-card" data-name="Biscoff Tres Leches" data-mini="400" data-medium="800" data-large="1400" data-desc="Caramelized biscoff cookie butter infused tres leches">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/4cc14e42-3206-4631-baea-9eafce52d156.png" class="card-image" alt="Biscoff Tres Leches">
                 <div class="card-content">
-                    <h3>Red Velvet Cake</h3>
-                    <p>Velvety smooth with cream cheese frosting</p>
-                    <div class="price">ETB 320</div>
-                    <button class="add-to-cart" data-item="Red Velvet Cake - 320 ETB">Add to Cart</button>
+                    <h3>BISCOFF TRES LECHES</h3>
+                    <div class="price-row">
+                        <span class="price">Mini – 400</span>
+                        <span class="price">Medium – 800</span>
+                        <span class="price">Large – 1400</span>
+                    </div>
+                    <div class="tin-note">✨ Our mini desserts come in a cozy tin!</div>
                 </div>
             </div>
 
-            <!-- IMAGE 3: Screenshot_2026-06-10-13-39-59-604.png - Pizza section -->
-            <div class="product-card" data-category="pizza">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/Screenshot_2026-06-10-13-39-59-604.png" class="card-image" alt="La Luna Special Pizza">
+            <!-- RED VELVET TRES LECHES -->
+            <div class="product-card" data-name="Red Velvet Tres Leches" data-mini="400" data-medium="800" data-large="1400" data-desc="Red velvet cake soaked in three milk mixture">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/Screenshot_2026-06-10-13-39-59-604.png" class="card-image" alt="Red Velvet Tres Leches">
                 <div class="card-content">
-                    <h3>La Luna Special Pizza</h3>
-                    <p>Beef, chicken, mortadella, tomato, egg, olives, mushroom, cheese</p>
-                    <div class="price">ETB 1,630</div>
-                    <button class="add-to-cart" data-item="La Luna Special Pizza - 1630 ETB">Add to Cart</button>
+                    <h3>RED VELVET TRES LECHES</h3>
+                    <div class="price-row">
+                        <span class="price">Mini – 400</span>
+                        <span class="price">Medium – 800</span>
+                        <span class="price">Large – 1400</span>
+                    </div>
+                    <div class="tin-note">✨ Our mini desserts come in a cozy tin!</div>
                 </div>
             </div>
 
-            <!-- IMAGE 4: b71daac8-5f6c-449c-afbf-0c4bcb9f32f7.png - Ethiopian Corner -->
-            <div class="product-card" data-category="ethiopian">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/b71daac8-5f6c-449c-afbf-0c4bcb9f32f7.png" class="card-image" alt="Doro Tibs">
+            <!-- OREO TRES LECHES -->
+            <div class="product-card" data-name="Oreo Tres Leches" data-mini="400" data-medium="800" data-large="1400" data-desc="Cookies and cream infused tres leches">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/b71daac8-5f6c-449c-afbf-0c4bcb9f32f7.png" class="card-image" alt="Oreo Tres Leches">
                 <div class="card-content">
-                    <h3>Doro Tibs</h3>
-                    <p>Spicy chicken breast, onion, tomato, green chili, butter, injera roll</p>
-                    <div class="price">ETB 1,120</div>
-                    <button class="add-to-cart" data-item="Doro Tibs - 1120 ETB">Add to Cart</button>
+                    <h3>OREO TRES LECHES</h3>
+                    <div class="price-row">
+                        <span class="price">Mini – 400</span>
+                        <span class="price">Medium – 800</span>
+                        <span class="price">Large – 1400</span>
+                    </div>
+                    <div class="tin-note">✨ Our mini desserts come in a cozy tin!</div>
                 </div>
             </div>
 
-            <!-- IMAGE 5: c34cab3e-b596-47bd-b56e-fa35ff61d421.png - Sandwiches & Burgers -->
-            <div class="product-card" data-category="sandwich">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/c34cab3e-b596-47bd-b56e-fa35ff61d421.png" class="card-image" alt="Specialty Burger">
+            <!-- PISTACHIO TRES LECHES -->
+            <div class="product-card" data-name="Pistachio Tres Leches" data-mini="570" data-medium="1200" data-large="2100" data-desc="Nutty pistachio flavored tres leches">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/c34cab3e-b596-47bd-b56e-fa35ff61d421.png" class="card-image" alt="Pistachio Tres Leches">
                 <div class="card-content">
-                    <h3>Specialty Burger</h3>
-                    <p>Mixed meat, fried egg, mortadella, cheese, roasted potato</p>
-                    <div class="price">ETB 1,100</div>
-                    <button class="add-to-cart" data-item="Specialty Burger - 1100 ETB">Add to Cart</button>
+                    <h3>PISTACHIO TRES LECHES</h3>
+                    <div class="price-row">
+                        <span class="price">Mini – 570</span>
+                        <span class="price">Medium – 1200</span>
+                        <span class="price">Large – 2100</span>
+                    </div>
+                    <div class="tin-note">✨ Our mini desserts come in a cozy tin!</div>
                 </div>
             </div>
 
-            <!-- IMAGE 6: cf505067-8d25-4cd7-9ce9-370eebe7676e.png - Main Courses (Fish/Poultry/Beef) -->
-            <div class="product-card" data-category="main">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/cf505067-8d25-4cd7-9ce9-370eebe7676e.png" class="card-image" alt="Grilled Salmon">
+            <!-- BROWNIES -->
+            <div class="product-card" data-name="Brownies" data-mini="570" data-medium="1250" data-large="2200" data-desc="Fudgy chocolate brownies, perfectly portioned">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/cf505067-8d25-4cd7-9ce9-370eebe7676e.png" class="card-image" alt="Brownies">
                 <div class="card-content">
-                    <h3>Grilled Salmon</h3>
-                    <p>Lemon & coriander marinated, mushed potato, rice</p>
-                    <div class="price">ETB 2,000</div>
-                    <button class="add-to-cart" data-item="Grilled Salmon - 2000 ETB">Add to Cart</button>
+                    <h3>BROWNIES</h3>
+                    <div class="price-row">
+                        <span class="price">Mini – 570</span>
+                        <span class="price">Medium – 1250</span>
+                        <span class="price">Large – 2200</span>
+                    </div>
+                    <div class="tin-note">🍫 Perfectly portioned for one • Great for gifting • Freshly made with love</div>
                 </div>
             </div>
 
-            <!-- IMAGE 7: fbe6b5fd-f2e1-4c6c-b193-ff7f0700b4a6.png - Breakfast -->
-            <div class="product-card" data-category="breakfast">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/fbe6b5fd-f2e1-4c6c-b193-ff7f0700b4a6.png" class="card-image" alt="Spanish Omelet">
+            <!-- BISCOFF BANANA -->
+            <div class="product-card" data-name="Biscoff Banana" data-mini="160" data-medium="800" data-large="" data-desc="Banana cake with biscoff cookie butter">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/fbe6b5fd-f2e1-4c6c-b193-ff7f0700b4a6.png" class="card-image" alt="Biscoff Banana">
                 <div class="card-content">
-                    <h3>Spanish Omelet</h3>
-                    <p>Eggs, onion, tomato, sweet pepper, cheese, toast bread</p>
-                    <div class="price">ETB 540</div>
-                    <button class="add-to-cart" data-item="Spanish Omelet - 540 ETB">Add to Cart</button>
+                    <h3>BISCOFF BANANA</h3>
+                    <div class="price-row">
+                        <span class="price">Mini – 160</span>
+                        <span class="price">Medium – 800</span>
+                    </div>
                 </div>
             </div>
 
-            <!-- Additional menu items using your new images cycled again -->
-            <div class="product-card" data-category="pastry">
+            <!-- TIRAMISU -->
+            <div class="product-card" data-name="Tiramisu" data-mini="470" data-medium="850" data-large="" data-desc="Classic Italian coffee dessert with mascarpone">
                 <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/32be262a-b282-49ab-83d3-d4d2bc97f7c7.png" class="card-image" alt="Tiramisu">
                 <div class="card-content">
-                    <h3>Tiramisu</h3>
-                    <p>Classic Italian coffee dessert</p>
-                    <div class="price">ETB 300</div>
-                    <button class="add-to-cart" data-item="Tiramisu - 300 ETB">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="breads">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/4cc14e42-3206-4631-baea-9eafce52d156.png" class="card-image" alt="Artisan Baguette">
-                <div class="card-content">
-                    <h3>Artisan Baguette</h3>
-                    <p>Crispy crust, soft crumb</p>
-                    <div class="price">ETB 70</div>
-                    <button class="add-to-cart" data-item="Artisan Baguette - 70 ETB">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="pizza">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/Screenshot_2026-06-10-13-39-59-604.png" class="card-image" alt="Pepperoni Pizza">
-                <div class="card-content">
-                    <h3>Pepperoni Pizza</h3>
-                    <p>Beef pepperoni, mozzarella, black olive</p>
-                    <div class="price">ETB 970</div>
-                    <button class="add-to-cart" data-item="Pepperoni Pizza - 970 ETB">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="ethiopian">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/b71daac8-5f6c-449c-afbf-0c4bcb9f32f7.png" class="card-image" alt="Special Shiro">
-                <div class="card-content">
-                    <h3>Special Shiro</h3>
-                    <p>Chickpeas powder cooked with Ethiopian sauce, mixed salad</p>
-                    <div class="price">ETB 600</div>
-                    <button class="add-to-cart" data-item="Special Shiro - 600 ETB">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="sandwich">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/c34cab3e-b596-47bd-b56e-fa35ff61d421.png" class="card-image" alt="Chicken Sandwich">
-                <div class="card-content">
-                    <h3>Chicken Sandwich with Cheese</h3>
-                    <p>Chicken, provolone cheese, mayo, roasted potato</p>
-                    <div class="price">ETB 900</div>
-                    <button class="add-to-cart" data-item="Chicken Sandwich - 900 ETB">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="main">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/cf505067-8d25-4cd7-9ce9-370eebe7676e.png" class="card-image" alt="Grilled Nile Perch">
-                <div class="card-content">
-                    <h3>Grilled Nile Perch</h3>
-                    <p>Lemon butter sauce, mushed potato, vegetable</p>
-                    <div class="price">ETB 1,200</div>
-                    <button class="add-to-cart" data-item="Grilled Nile Perch - 1200 ETB">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="breakfast">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/fbe6b5fd-f2e1-4c6c-b193-ff7f0700b4a6.png" class="card-image" alt="Pancake">
-                <div class="card-content">
-                    <h3>Pancake</h3>
-                    <p>Three layers with syrup & sugar</p>
-                    <div class="price">ETB 450</div>
-                    <button class="add-to-cart" data-item="Pancake - 450 ETB">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="pasta">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/32be262a-b282-49ab-83d3-d4d2bc97f7c7.png" class="card-image" alt="Spaghetti Carbonara">
-                <div class="card-content">
-                    <h3>Carbonara Sauce</h3>
-                    <p>Creamy carbonara with spaghetti</p>
-                    <div class="price">ETB 890</div>
-                    <button class="add-to-cart" data-item="Carbonara - 890 ETB">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="beverages">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/4cc14e42-3206-4631-baea-9eafce52d156.png" class="card-image" alt="Cappuccino">
-                <div class="card-content">
-                    <h3>Cappuccino</h3>
-                    <p>Espresso, steamed milk, foam</p>
-                    <div class="price">ETB 200</div>
-                    <button class="add-to-cart" data-item="Cappuccino - 200 ETB">Add to Cart</button>
+                    <h3>TIRAMISU</h3>
+                    <div class="price-row">
+                        <span class="price">Mini – 470</span>
+                        <span class="price">Medium – 850</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 </main>
 
-<footer class="main-footer">
+<!-- Modal for bold popup -->
+<div id="itemModal" class="modal">
+    <div class="modal-content">
+        <img id="modalImage" class="modal-image" src="" alt="">
+        <div class="modal-body">
+            <h3 id="modalTitle"></h3>
+            <div class="modal-prices" id="modalPrices"></div>
+            <p id="modalDesc" style="color: #5A4A5A;"></p>
+            <div class="tin-note" id="modalNote"></div>
+            <button class="close-modal" id="closeModalBtn">Close</button>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Love Section -->
+<footer class="love-footer">
     <div class="container">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <div class="footer-logo">🌸 Riha's Bakehouse</div>
-                <p class="tagline">Bites to Happiness</p>
-                <p>Artisan Bakery & Italian-Ethiopian Cuisine<br>Addis Ababa, Ethiopia</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-telegram-plane"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </div>
+        <div class="love-grid">
+            <div class="love-item">
+                <i class="fas fa-heart"></i>
+                <h4>Made with love</h4>
+                <p>Every bite handmade with care</p>
             </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Our Menu</a></li>
-                    <li><a href="#">Catering</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Order Online</a></li>
-                </ul>
+            <div class="love-item">
+                <i class="fas fa-seedling"></i>
+                <h4>Quality ingredients</h4>
+                <p>Only the best for you</p>
             </div>
-            <div class="footer-col">
-                <h4>Opening Hours</h4>
-                <ul class="hours">
-                    <li>Monday - Saturday</li>
-                    <li><strong>7:00 AM - 8:00 PM</strong></li>
-                    <li>Sunday</li>
-                    <li><strong>8:00 AM - 6:00 PM</strong></li>
-                    <li>Holidays</li>
-                    <li><strong>8:00 AM - 5:00 PM</strong></li>
-                </ul>
+            <div class="love-item">
+                <i class="fas fa-home"></i>
+                <h4>Baked in a home</h4>
+                <p>Cozy, warm, authentic</p>
             </div>
-            <div class="footer-col">
-                <h4>Contact Info</h4>
-                <ul class="contact-info">
-                    <li><i class="fas fa-phone"></i> +251 79 11 069 818</li>
-                    <li><i class="fas fa-envelope"></i> rihasbakehouse@qmail.com</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Bole Subcity, near Atlas</li>
-                </ul>
-                <div class="payment-badge">
-                    <span>We Accept:</span>
-                    <i class="fas fa-money-bill-wave"></i>
-                    <i class="fas fa-mobile-alt"></i>
-                    <i class="fas fa-university"></i>
-                </div>
+            <div class="love-item">
+                <i class="fas fa-cookie-bite"></i>
+                <h4>Sweetened with care</h4>
+                <p>Perfectly balanced sweetness</p>
             </div>
         </div>
+        <p class="thankyou">✨ Thank you for supporting our small bakehouse. ✨</p>
         <div class="footer-bottom">
-            <p>&copy; 2026 Riha's Bakehouse — Bites to Happiness | Artisan Bakery & Catering | Addis Ababa, Ethiopia</p>
-            <p class="footer-heart">✨ Handcrafted with love & passion | Fresh Daily Since 2020 ✨</p>
+            <p>&copy; 2026 Riha's Bakehouse — Bites to Happiness | Made with love, baked for you | Addis Ababa, Ethiopia</p>
         </div>
     </div>
 </footer>
 
-<div id="toastMsg" class="toast-msg">✓ Added to cart</div>
-
 <script>
+    // Mobile sidebar
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileSidebar = document.getElementById('mobileSidebar');
     const sidebarOverlay = document.getElementById('sidebarOverlay');
@@ -780,29 +749,52 @@
     closeSidebarBtn?.addEventListener('click', closeSidebar);
     sidebarOverlay?.addEventListener('click', closeSidebar);
 
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-            const category = this.dataset.category;
-            document.querySelectorAll('.product-card').forEach(card => {
-                if (category === 'all' || card.dataset.category === category) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+    // Modal functionality - makes cards clickable with bold popup
+    const modal = document.getElementById('itemModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalPrices = document.getElementById('modalPrices');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalNote = document.getElementById('modalNote');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+
+    function showModal(card) {
+        const name = card.dataset.name;
+        const mini = card.dataset.mini;
+        const medium = card.dataset.medium;
+        const large = card.dataset.large;
+        const desc = card.dataset.desc;
+        const imgSrc = card.querySelector('.card-image').src;
+        const tinNote = card.querySelector('.tin-note')?.innerHTML || '';
+
+        modalTitle.innerText = name;
+        modalImage.src = imgSrc;
+        modalDesc.innerText = desc || 'Freshly baked with love';
+
+        let pricesHtml = '';
+        if (mini) pricesHtml += `<p><strong>🍰 Mini:</strong> ETB ${mini}</p>`;
+        if (medium) pricesHtml += `<p><strong>📦 Medium:</strong> ETB ${medium}</p>`;
+        if (large) pricesHtml += `<p><strong>🎂 Large:</strong> ETB ${large}</p>`;
+        modalPrices.innerHTML = pricesHtml;
+        modalNote.innerHTML = tinNote || '✨ Made with love, baked for you ✨';
+
+        modal.classList.add('active');
+    }
+
+    function closeModal() {
+        modal.classList.remove('active');
+    }
+
+    document.querySelectorAll('.product-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+            if (e.target.classList.contains('add-to-cart')) return;
+            showModal(this);
         });
     });
 
-    const toast = document.getElementById('toastMsg');
-    document.querySelectorAll('.add-to-cart').forEach(btn => {
-        btn.addEventListener('click', function() {
-            toast.classList.add('show');
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 1500);
-        });
+    closeModalBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) closeModal();
     });
 </script>
 </body>

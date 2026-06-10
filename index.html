@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Riha's Bakehouse - Bites to Happiness. Artisan tres leches, brownies, tiramisu baked fresh daily with love.">
+    <meta name="description" content="Riha's Bakehouse - Bites to Happiness. Premium Artisan Bakery in Addis Ababa, Ethiopia.">
     <meta name="theme-color" content="#FFF5F7">
-    <title>Menu | Riha's Bakehouse | Bites to Happiness</title>
+    <title>Riha's Bakehouse | Bites to Happiness | Artisan Bakery</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -46,21 +46,25 @@
             padding: 16px 24px;
         }
 
-        .logo h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            color: #C44569;
-            letter-spacing: -0.5px;
+        .logo a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 55px;
+            width: auto;
+            display: block;
+            margin-bottom: 5px;
         }
 
         .logo span {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: #B0A1B5;
             display: block;
-        }
-
-        .logo a {
-            text-decoration: none;
+            letter-spacing: 1px;
         }
 
         .desktop-nav {
@@ -150,6 +154,11 @@
             border-bottom: 1px solid #FFE0E7;
         }
 
+        .sidebar-header h3 {
+            font-family: 'Playfair Display', serif;
+            color: #C44569;
+        }
+
         .close-sidebar {
             background: none;
             border: none;
@@ -198,8 +207,8 @@
         /* Hero Section */
         .hero {
             position: relative;
-            height: 50vh;
-            min-height: 400px;
+            height: 70vh;
+            min-height: 500px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -224,7 +233,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.4);
+            background: rgba(0,0,0,0.45);
             z-index: 1;
         }
 
@@ -237,12 +246,32 @@
             font-family: 'Playfair Display', serif;
             font-size: 4rem;
             margin-bottom: 16px;
-            letter-spacing: 2px;
+        }
+
+        .hero-content h1 span {
+            font-size: 3rem;
         }
 
         .hero-content p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             opacity: 0.95;
+            margin-bottom: 32px;
+        }
+
+        .hero-btn {
+            background: #C44569;
+            color: white;
+            padding: 12px 32px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .hero-btn:hover {
+            background: #A83256;
+            transform: scale(1.02);
         }
 
         /* Love Branding Section */
@@ -267,19 +296,17 @@
             color: #C44569;
             text-transform: uppercase;
             letter-spacing: 3px;
-            position: relative;
         }
 
         .baked-badge small {
             font-size: 0.9rem;
             display: block;
             color: #B0A1B5;
-            letter-spacing: 1px;
         }
 
         .love-title {
             font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             color: #2D1B2E;
             margin-bottom: 16px;
         }
@@ -291,6 +318,13 @@
             font-size: 1.1rem;
         }
 
+        .love-quote {
+            font-style: italic;
+            color: #C44569;
+            font-weight: 500;
+            margin-top: 20px;
+        }
+
         .heart-divider {
             display: flex;
             justify-content: center;
@@ -300,181 +334,88 @@
             font-size: 1.3rem;
         }
 
-        /* Menu Header */
-        .menu-header {
+        /* Section Title */
+        .section-title {
             text-align: center;
-            margin: 60px 0 40px;
-        }
-
-        .menu-header h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             color: #2D1B2E;
-            margin-bottom: 8px;
+            margin: 48px 0 32px;
         }
 
-        .menu-header p {
-            color: #B0A1B5;
-            font-size: 1rem;
-            letter-spacing: 2px;
-        }
-
-        /* Premium Cards Grid */
+        /* Cards Grid */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 40px;
-            margin-bottom: 80px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 32px;
+            margin-bottom: 64px;
         }
 
         .product-card {
             background: white;
-            border-radius: 28px;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
-            border: 1px solid rgba(196,69,105,0.1);
         }
 
         .product-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 25px 45px rgba(196,69,105,0.15);
-            border-color: rgba(196,69,105,0.3);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(196,69,105,0.2);
         }
 
         .card-image {
             width: 100%;
-            height: 260px;
+            height: 220px;
             object-fit: cover;
-            transition: transform 0.6s ease;
+            transition: transform 0.3s;
         }
 
         .product-card:hover .card-image {
-            transform: scale(1.03);
+            transform: scale(1.02);
         }
 
         .card-content {
-            padding: 24px;
+            padding: 20px;
             text-align: center;
         }
 
         .card-content h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            margin-bottom: 12px;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
             color: #2D1B2E;
         }
 
-        .price-row {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 15px 0;
-            flex-wrap: wrap;
+        .card-content p {
+            font-size: 0.85rem;
+            color: #B0A1B5;
+            margin-bottom: 12px;
         }
 
         .price {
-            font-weight: 600;
-            font-size: 0.9rem;
+            font-weight: 700;
+            font-size: 1.2rem;
             color: #C44569;
-            background: #FFF0F3;
-            padding: 6px 14px;
-            border-radius: 30px;
-            display: inline-block;
-        }
-
-        .tin-note {
-            font-size: 0.75rem;
-            color: #B0A1B5;
-            margin-top: 12px;
-            font-style: italic;
-        }
-
-        /* Premium Gallery Section - Our Bakehouse Packages */
-        .gallery-section {
-            background: linear-gradient(135deg, #FFF5F7 0%, #FFFFFF 100%);
-            padding: 80px 0;
-            margin-top: 20px;
-            position: relative;
-        }
-
-        .gallery-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #C44569, #FFB8D2, #C44569, transparent);
-        }
-
-        .gallery-title {
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            color: #2D1B2E;
             margin-bottom: 16px;
         }
 
-        .gallery-subtitle {
-            text-align: center;
-            color: #B0A1B5;
-            margin-bottom: 50px;
-            font-size: 1rem;
-            letter-spacing: 2px;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .gallery-item {
-            position: relative;
-            background: white;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            transition: all 0.4s ease;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(196,69,105,0.2);
-        }
-
-        .gallery-item img {
+        .add-to-cart {
             width: 100%;
-            height: 280px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
+            background: #FFF0F3;
+            border: none;
+            padding: 10px;
+            border-radius: 40px;
+            font-weight: 600;
+            color: #C44569;
+            cursor: pointer;
+            transition: all 0.3s;
         }
 
-        .gallery-item:hover img {
-            transform: scale(1.02);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-            padding: 20px;
+        .add-to-cart:hover {
+            background: #C44569;
             color: white;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-
-        .gallery-overlay span {
-            font-size: 0.9rem;
-            font-weight: 500;
         }
 
         /* Modal */
@@ -499,10 +440,10 @@
         .modal-content {
             background: white;
             border-radius: 32px;
-            max-width: 550px;
+            max-width: 500px;
             width: 90%;
             overflow: hidden;
-            animation: modalFadeIn 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            animation: modalFadeIn 0.3s ease;
         }
 
         @keyframes modalFadeIn {
@@ -518,57 +459,48 @@
 
         .modal-image {
             width: 100%;
-            height: 300px;
+            height: 280px;
             object-fit: cover;
         }
 
         .modal-body {
-            padding: 32px;
+            padding: 24px;
             text-align: center;
         }
 
         .modal-body h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #2D1B2E;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
-        .modal-prices {
-            background: #FFF5F7;
-            padding: 20px;
-            border-radius: 24px;
-            margin: 20px 0;
-        }
-
-        .modal-prices p {
-            margin: 10px 0;
-            font-weight: 500;
-        }
-
-        .modal-note {
+        .modal-price {
+            font-size: 1.5rem;
             color: #C44569;
-            font-size: 0.9rem;
-            margin-top: 15px;
+            font-weight: 700;
+            margin: 16px 0;
+        }
+
+        .modal-desc {
+            color: #5A4A5A;
+            margin-bottom: 16px;
         }
 
         .close-modal {
             background: #C44569;
             color: white;
             border: none;
-            padding: 14px 28px;
-            border-radius: 50px;
+            padding: 12px 24px;
+            border-radius: 40px;
             font-weight: 600;
-            font-size: 1rem;
             cursor: pointer;
-            margin-top: 20px;
+            margin-top: 16px;
             width: 100%;
-            transition: all 0.3s;
         }
 
         .close-modal:hover {
             background: #A83256;
-            transform: scale(1.02);
         }
 
         /* Footer */
@@ -666,6 +598,27 @@
             color: #FFB8D2;
         }
 
+        .toast-msg {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #C44569;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-weight: 500;
+            z-index: 3000;
+            opacity: 0;
+            transition: all 0.3s;
+            pointer-events: none;
+        }
+
+        .toast-msg.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
         @media (max-width: 768px) {
             .desktop-nav, .btn-order {
                 display: none;
@@ -680,14 +633,13 @@
                 font-size: 1.3rem;
             }
             .love-title {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
-            .cards-grid, .gallery-grid {
+            .cards-grid {
                 grid-template-columns: 1fr;
             }
-            .gallery-overlay {
-                opacity: 1;
-                background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+            .logo-img {
+                height: 45px;
             }
         }
     </style>
@@ -700,9 +652,9 @@
         <button class="close-sidebar" id="closeSidebarBtn"><i class="fas fa-times"></i></button>
     </div>
     <div class="sidebar-nav">
-        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
         <a href="about.html"><i class="fas fa-heart"></i> About</a>
-        <a href="menu.html" class="active"><i class="fas fa-bread-slice"></i> Menu</a>
+        <a href="menu.html"><i class="fas fa-bread-slice"></i> Menu</a>
         <a href="contact.html"><i class="fas fa-map-pin"></i> Contact</a>
     </div>
     <a href="order.html" class="sidebar-order-btn"><i class="fas fa-shopping-bag"></i> ORDER NOW</a>
@@ -719,14 +671,14 @@
         <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
         <div class="logo">
             <a href="index.html">
-                <h1>🌸 RIHA'S BAKEHOUSE</h1>
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/59dfa04a9b1383bafff3cfb62a4f651a7692305d/2c4b42de-78e7-424c-bec7-a520ec8c13aa.png" alt="Riha's Bakehouse Logo" class="logo-img">
                 <span>Bites to Happiness</span>
             </a>
         </div>
         <nav class="desktop-nav">
-            <a href="index.html">Home</a>
+            <a href="index.html" class="active">Home</a>
             <a href="about.html">About</a>
-            <a href="menu.html" class="active">Menu</a>
+            <a href="menu.html">Menu</a>
             <a href="contact.html">Contact</a>
         </nav>
         <a href="order.html" class="btn-order"><i class="fas fa-shopping-bag"></i> Order Now</a>
@@ -734,17 +686,16 @@
 </header>
 
 <main>
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-bg" style="background-image: url('https://raw.githubusercontent.com/developereth/Rihasbakehouse/e25556f86fa35220a0a562366f5642f49d7dc7b2/360_F_996648613_JeLaqLaREMrfl1DwqWluZPTdFZurAo3a.jpg');"></div>
         <div class="hero-overlay-light"></div>
         <div class="container hero-content">
-            <h1>Our Menu</h1>
-            <p>Artisanal creations made fresh daily</p>
+            <h1>Bites to Happiness <span>🌸</span></h1>
+            <p>Artisan Bakery in the heart of Addis Ababa</p>
+            <a href="menu.html" class="hero-btn">Explore Our Menu →</a>
         </div>
     </section>
 
-    <!-- Love Branding Section -->
     <section class="love-branding">
         <div class="container">
             <div class="baked-badges">
@@ -752,182 +703,66 @@
                 <div class="baked-badge">made with <small>love</small></div>
                 <div class="baked-badge">BAKEHOUSE <small>bites to happiness</small></div>
             </div>
-            <h2 class="love-title">🌸 Riha's Bakehouse</h2>
+            <h2 class="love-title">🌸 Welcome to Riha's Bakehouse</h2>
             <p class="love-text">Welcome to our cozy bakehouse, where every bite is made with love.<br>
             The warm scent of vanilla, brown sugar, butter, and sweetness fills the air—just like home.</p>
-            <p class="love-quote" style="font-style: italic; color: #C44569;">✨ Made with love, baked for you. ✨</p>
+            <p class="love-quote">✨ Made with love, baked for you. ✨</p>
             <div class="heart-divider">
                 <i class="fas fa-heart"></i> <i class="fas fa-heart"></i> <i class="fas fa-heart"></i>
             </div>
         </div>
     </section>
 
-    <!-- Menu Section -->
     <section class="container">
-        <div class="menu-header">
-            <h2>🍰 Signature Collection</h2>
-            <p>MINI SIZE • MEDIUM • LARGE</p>
-        </div>
-
-        <div class="cards-grid" id="menuGrid">
-            <!-- TRES LECHES CLASSIC -->
-            <div class="product-card" data-name="Tres Leches Classic" data-mini="300" data-medium="700" data-large="1200" data-desc="Classic three milk cake, light and creamy. A timeless favorite!">
+        <h2 class="section-title">🌸 Featured Delights</h2>
+        <div class="cards-grid" id="featuredGrid">
+            <div class="product-card" data-name="Tres Leches Classic" data-price="300" data-desc="Classic three milk cake, light and creamy. Our signature dessert!">
                 <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/e4eadb02b317c943716c5209bee5d738b26f97fd/a8195a03-8053-46a3-9f19-478ee8cfe290.png" class="card-image" alt="Tres Leches Classic">
                 <div class="card-content">
-                    <h3>TRES LECHES CLASSIC</h3>
-                    <div class="price-row">
-                        <span class="price">Mini – 300</span>
-                        <span class="price">Medium – 700</span>
-                        <span class="price">Large – 1200</span>
-                    </div>
-                    <div class="tin-note">✨ Our mini desserts come in a cozy tin!</div>
+                    <h3>Tres Leches Classic</h3>
+                    <p>Classic three milk cake, light and creamy</p>
+                    <div class="price">ETB 300 (Mini)</div>
+                    <button class="add-to-cart" data-item="Tres Leches Classic - 300 ETB">Add to Cart</button>
                 </div>
             </div>
-
-            <!-- BISCOFF TRES LECHES -->
-            <div class="product-card" data-name="Biscoff Tres Leches" data-mini="400" data-medium="800" data-large="1400" data-desc="Caramelized biscoff cookie butter infused tres leches - irresistible!">
+            <div class="product-card" data-name="Biscoff Tres Leches" data-price="400" data-desc="Caramelized biscoff cookie butter infused tres leches">
                 <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/e4eadb02b317c943716c5209bee5d738b26f97fd/6f0f6a58-9d9a-4464-99b0-5e3bb75ba5fe.png" class="card-image" alt="Biscoff Tres Leches">
                 <div class="card-content">
-                    <h3>BISCOFF TRES LECHES</h3>
-                    <div class="price-row">
-                        <span class="price">Mini – 400</span>
-                        <span class="price">Medium – 800</span>
-                        <span class="price">Large – 1400</span>
-                    </div>
-                    <div class="tin-note">✨ Our mini desserts come in a cozy tin!</div>
+                    <h3>Biscoff Tres Leches</h3>
+                    <p>Cookie butter infused tres leches</p>
+                    <div class="price">ETB 400 (Mini)</div>
+                    <button class="add-to-cart" data-item="Biscoff Tres Leches - 400 ETB">Add to Cart</button>
                 </div>
             </div>
-
-            <!-- RED VELVET TRES LECHES -->
-            <div class="product-card" data-name="Red Velvet Tres Leches" data-mini="400" data-medium="800" data-large="1400" data-desc="Red velvet cake soaked in three milk mixture - vibrant and velvety">
+            <div class="product-card" data-name="Red Velvet Tres Leches" data-price="400" data-desc="Red velvet cake soaked in three milk mixture">
                 <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/e4eadb02b317c943716c5209bee5d738b26f97fd/56187b10-f18c-4a25-ba5c-143b79c1c14d.png" class="card-image" alt="Red Velvet Tres Leches">
                 <div class="card-content">
-                    <h3>RED VELVET TRES LECHES</h3>
-                    <div class="price-row">
-                        <span class="price">Mini – 400</span>
-                        <span class="price">Medium – 800</span>
-                        <span class="price">Large – 1400</span>
-                    </div>
-                    <div class="tin-note">✨ Our mini desserts come in a cozy tin!</div>
+                    <h3>Red Velvet Tres Leches</h3>
+                    <p>Red velvet with creamy milk soak</p>
+                    <div class="price">ETB 400 (Mini)</div>
+                    <button class="add-to-cart" data-item="Red Velvet Tres Leches - 400 ETB">Add to Cart</button>
                 </div>
             </div>
-
-            <!-- OREO TRES LECHES -->
-            <div class="product-card" data-name="Oreo Tres Leches" data-mini="400" data-medium="800" data-large="1400" data-desc="Cookies and cream infused tres leches - a crowd pleaser">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/e4eadb02b317c943716c5209bee5d738b26f97fd/51085379-19e1-499d-ab68-060c8a491985.png" class="card-image" alt="Oreo Tres Leches">
-                <div class="card-content">
-                    <h3>OREO TRES LECHES</h3>
-                    <div class="price-row">
-                        <span class="price">Mini – 400</span>
-                        <span class="price">Medium – 800</span>
-                        <span class="price">Large – 1400</span>
-                    </div>
-                    <div class="tin-note">✨ Our mini desserts come in a cozy tin!</div>
-                </div>
-            </div>
-
-            <!-- PISTACHIO TRES LECHES -->
-            <div class="product-card" data-name="Pistachio Tres Leches" data-mini="570" data-medium="1200" data-large="2100" data-desc="Nutty pistachio flavored tres leches - premium and elegant">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/e4eadb02b317c943716c5209bee5d738b26f97fd/db509cf6-0361-4663-b6f3-b62b36d75286.png" class="card-image" alt="Pistachio Tres Leches">
-                <div class="card-content">
-                    <h3>PISTACHIO TRES LECHES</h3>
-                    <div class="price-row">
-                        <span class="price">Mini – 570</span>
-                        <span class="price">Medium – 1200</span>
-                        <span class="price">Large – 2100</span>
-                    </div>
-                    <div class="tin-note">✨ Our mini desserts come in a cozy tin!</div>
-                </div>
-            </div>
-
-            <!-- BROWNIES -->
-            <div class="product-card" data-name="Brownies" data-mini="570" data-medium="1250" data-large="2200" data-desc="Fudgy chocolate brownies, perfectly portioned - pure chocolate bliss">
+            <div class="product-card" data-name="Brownies" data-price="570" data-desc="Fudgy chocolate brownies, perfectly portioned">
                 <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/e4eadb02b317c943716c5209bee5d738b26f97fd/f09b25bc-1cd8-4677-aa18-a16044ef6b51~2.png" class="card-image" alt="Brownies">
                 <div class="card-content">
-                    <h3>BROWNIES</h3>
-                    <div class="price-row">
-                        <span class="price">Mini – 570</span>
-                        <span class="price">Medium – 1250</span>
-                        <span class="price">Large – 2200</span>
-                    </div>
-                    <div class="tin-note">🍫 Perfectly portioned for one • Great for gifting • Freshly made with love</div>
-                </div>
-            </div>
-
-            <!-- BISCOFF BANANA -->
-            <div class="product-card" data-name="Biscoff Banana" data-mini="160" data-medium="800" data-large="" data-desc="Banana cake with biscoff cookie butter - a unique delight">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/e9586f2b525473dd62acda28f36172bb93cdc768/a8195a03-8053-46a3-9f19-478ee8cfe290~4.png" class="card-image" alt="Biscoff Banana">
-                <div class="card-content">
-                    <h3>BISCOFF BANANA</h3>
-                    <div class="price-row">
-                        <span class="price">Mini – 160</span>
-                        <span class="price">Medium – 800</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TIRAMISU -->
-            <div class="product-card" data-name="Tiramisu" data-mini="470" data-medium="850" data-large="" data-desc="Classic Italian coffee dessert with mascarpone - authentic and dreamy">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/e4eadb02b317c943716c5209bee5d738b26f97fd/a8195a03-8053-46a3-9f19-79d0006860b6.png" class="card-image" alt="Tiramisu">
-                <div class="card-content">
-                    <h3>TIRAMISU</h3>
-                    <div class="price-row">
-                        <span class="price">Mini – 470</span>
-                        <span class="price">Medium – 850</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PREMIUM GALLERY SECTION - Our Bakehouse Packages -->
-    <section class="gallery-section">
-        <div class="container">
-            <h2 class="gallery-title">📸 Our Bakehouse Packages</h2>
-            <p class="gallery-subtitle">Handcrafted with love • Perfect for gifting • Made fresh daily</p>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/32be262a-b282-49ab-83d3-d4d2bc97f7c7.png" alt="Package 1">
-                    <div class="gallery-overlay"><span>✨ Classic Collection</span></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/4cc14e42-3206-4631-baea-9eafce52d156.png" alt="Package 2">
-                    <div class="gallery-overlay"><span>🌸 Signature Box</span></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/Screenshot_2026-06-10-13-39-59-604.png" alt="Package 3">
-                    <div class="gallery-overlay"><span>🍰 Celebration Set</span></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/b71daac8-5f6c-449c-afbf-0c4bcb9f32f7.png" alt="Package 4">
-                    <div class="gallery-overlay"><span>💝 Gift Box</span></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/c34cab3e-b596-47bd-b56e-fa35ff61d421.png" alt="Package 5">
-                    <div class="gallery-overlay"><span>🎁 Premium Tray</span></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/cf505067-8d25-4cd7-9ce9-370eebe7676e.png" alt="Package 6">
-                    <div class="gallery-overlay"><span>✨ Deluxe Package</span></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/fbe6b5fd-f2e1-4c6c-b193-ff7f0700b4a6.png" alt="Package 7">
-                    <div class="gallery-overlay"><span>🌸 Family Pack</span></div>
+                    <h3>Brownies</h3>
+                    <p>Fudgy chocolate brownies</p>
+                    <div class="price">ETB 570 (Mini)</div>
+                    <button class="add-to-cart" data-item="Brownies - 570 ETB">Add to Cart</button>
                 </div>
             </div>
         </div>
     </section>
 </main>
 
-<!-- Modal -->
 <div id="itemModal" class="modal">
     <div class="modal-content">
         <img id="modalImage" class="modal-image" src="" alt="">
         <div class="modal-body">
             <h3 id="modalTitle"></h3>
-            <div class="modal-prices" id="modalPrices"></div>
-            <p id="modalDesc" style="color: #5A4A5A; line-height: 1.6;"></p>
-            <div class="modal-note" id="modalNote"></div>
+            <div class="modal-price" id="modalPrice"></div>
+            <p id="modalDesc" class="modal-desc"></p>
             <button class="close-modal" id="closeModalBtn">Close</button>
         </div>
     </div>
@@ -990,8 +825,9 @@
     </div>
 </footer>
 
+<div id="toastMsg" class="toast-msg">✓ Added to cart</div>
+
 <script>
-    // Mobile sidebar
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileSidebar = document.getElementById('mobileSidebar');
     const sidebarOverlay = document.getElementById('sidebarOverlay');
@@ -1011,35 +847,18 @@
     closeSidebarBtn?.addEventListener('click', closeSidebar);
     sidebarOverlay?.addEventListener('click', closeSidebar);
 
-    // Modal functionality
     const modal = document.getElementById('itemModal');
     const modalImage = document.getElementById('modalImage');
     const modalTitle = document.getElementById('modalTitle');
-    const modalPrices = document.getElementById('modalPrices');
+    const modalPrice = document.getElementById('modalPrice');
     const modalDesc = document.getElementById('modalDesc');
-    const modalNote = document.getElementById('modalNote');
     const closeModalBtn = document.getElementById('closeModalBtn');
 
     function showModal(card) {
-        const name = card.dataset.name;
-        const mini = card.dataset.mini;
-        const medium = card.dataset.medium;
-        const large = card.dataset.large;
-        const desc = card.dataset.desc;
-        const imgSrc = card.querySelector('.card-image').src;
-        const tinNote = card.querySelector('.tin-note')?.innerHTML || '';
-
-        modalTitle.innerText = name;
-        modalImage.src = imgSrc;
-        modalDesc.innerText = desc || 'Freshly baked with love';
-
-        let pricesHtml = '';
-        if (mini) pricesHtml += `<p><strong>🍰 Mini:</strong> ETB ${mini}</p>`;
-        if (medium) pricesHtml += `<p><strong>📦 Medium:</strong> ETB ${medium}</p>`;
-        if (large) pricesHtml += `<p><strong>🎂 Large:</strong> ETB ${large}</p>`;
-        modalPrices.innerHTML = pricesHtml;
-        modalNote.innerHTML = tinNote || '✨ Made with love, baked for you ✨';
-
+        modalTitle.innerText = card.dataset.name;
+        modalImage.src = card.querySelector('.card-image').src;
+        modalDesc.innerText = card.dataset.desc || 'Freshly baked with love';
+        modalPrice.innerText = `ETB ${card.dataset.price}`;
         modal.classList.add('active');
     }
 
@@ -1057,6 +876,17 @@
     closeModalBtn.addEventListener('click', closeModal);
     modal.addEventListener('click', function(e) {
         if (e.target === modal) closeModal();
+    });
+
+    const toast = document.getElementById('toastMsg');
+    document.querySelectorAll('.add-to-cart').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 1500);
+        });
     });
 </script>
 </body>

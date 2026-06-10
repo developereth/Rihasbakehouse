@@ -3,12 +3,468 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Explore our artisan bakery menu - fresh breads, pastries, cakes and Ethiopian specialties">
+    <meta name="description" content="Explore our artisan bakery menu - fresh breads, pastries, cakes, Ethiopian specialties, pizzas, and more">
     <meta name="theme-color" content="#FFF5F7">
     <title>Menu | Riha's Bakehouse | Bites to Happiness</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFF9FA;
+            color: #2D1B2E;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .main-header {
+            background: #FFFFFF;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.95);
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+        }
+
+        .logo h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #C44569;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            font-size: 0.75rem;
+            color: #B0A1B5;
+            display: block;
+        }
+
+        .logo a {
+            text-decoration: none;
+        }
+
+        .desktop-nav {
+            display: flex;
+            gap: 32px;
+        }
+
+        .desktop-nav a {
+            text-decoration: none;
+            color: #4A3B4A;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .desktop-nav a:hover, .desktop-nav a.active {
+            color: #C44569;
+        }
+
+        .btn-order {
+            background: #C44569;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-order:hover {
+            background: #A83256;
+            transform: scale(1.02);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #C44569;
+            cursor: pointer;
+        }
+
+        .mobile-sidebar {
+            position: fixed;
+            top: 0;
+            left: -280px;
+            width: 280px;
+            height: 100%;
+            background: white;
+            z-index: 2000;
+            transition: left 0.3s ease;
+            box-shadow: 2px 0 20px rgba(0,0,0,0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mobile-sidebar.open {
+            left: 0;
+        }
+
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1999;
+            display: none;
+        }
+
+        .sidebar-overlay.active {
+            display: block;
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #FFE0E7;
+        }
+
+        .close-sidebar {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .sidebar-nav a {
+            text-decoration: none;
+            color: #4A3B4A;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .sidebar-nav a.active {
+            color: #C44569;
+        }
+
+        .sidebar-order-btn {
+            background: #C44569;
+            color: white;
+            padding: 12px;
+            border-radius: 40px;
+            text-align: center;
+            text-decoration: none;
+            margin-top: auto;
+        }
+
+        .sidebar-footer {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #FFE0E7;
+            font-size: 12px;
+            color: #B0A1B5;
+        }
+
+        .hero {
+            position: relative;
+            height: 40vh;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        .hero-overlay-light {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .category-filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin: 48px 0 32px;
+        }
+
+        .filter-btn {
+            background: #FFF0F3;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 40px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            color: #4A3B4A;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: #C44569;
+            color: white;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 32px;
+            margin-bottom: 64px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(196,69,105,0.15);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #2D1B2E;
+        }
+
+        .card-content p {
+            font-size: 0.85rem;
+            color: #B0A1B5;
+            margin-bottom: 12px;
+        }
+
+        .price {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #C44569;
+            margin-bottom: 16px;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            background: #FFF0F3;
+            border: none;
+            padding: 10px;
+            border-radius: 40px;
+            font-weight: 600;
+            color: #C44569;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background: #C44569;
+            color: white;
+        }
+
+        .main-footer {
+            background: #2D1B2E;
+            color: #E8D9E5;
+            padding: 48px 0 24px;
+            margin-top: 48px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #FFB8D2;
+            margin-bottom: 12px;
+        }
+
+        .tagline {
+            color: #FFB8D2;
+            margin-bottom: 12px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .social-links a {
+            color: #E8D9E5;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #FFB8D2;
+        }
+
+        .footer-col h4 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 16px;
+            color: #FFB8D2;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col a {
+            color: #E8D9E5;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: #FFB8D2;
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .payment-badge {
+            margin-top: 20px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.8rem;
+        }
+
+        .footer-heart {
+            margin-top: 8px;
+            color: #FFB8D2;
+        }
+
+        .toast-msg {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #C44569;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-weight: 500;
+            z-index: 3000;
+            opacity: 0;
+            transition: all 0.3s;
+            pointer-events: none;
+        }
+
+        .toast-msg.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .desktop-nav, .btn-order {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .category-filters {
+                gap: 8px;
+            }
+            .filter-btn {
+                padding: 6px 16px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -18,13 +474,13 @@
         <button class="close-sidebar" id="closeSidebarBtn"><i class="fas fa-times"></i></button>
     </div>
     <div class="sidebar-nav">
-        <a href="index.html"><i class="fas fa-home"></i> Home</a>
-        <a href="about.html"><i class="fas fa-heart"></i> About</a>
-        <a href="menu.html" class="active"><i class="fas fa-bread-slice"></i> Menu</a>
-        <a href="catering.html"><i class="fas fa-champagne-glasses"></i> Catering</a>
-        <a href="contact.html"><i class="fas fa-map-pin"></i> Contact</a>
+        <a href="#"><i class="fas fa-home"></i> Home</a>
+        <a href="#"><i class="fas fa-heart"></i> About</a>
+        <a href="#" class="active"><i class="fas fa-bread-slice"></i> Menu</a>
+        <a href="#"><i class="fas fa-champagne-glasses"></i> Catering</a>
+        <a href="#"><i class="fas fa-map-pin"></i> Contact</a>
     </div>
-    <a href="order.html" class="sidebar-order-btn"><i class="fas fa-shopping-bag"></i> ORDER NOW</a>
+    <a href="#" class="sidebar-order-btn"><i class="fas fa-shopping-bag"></i> ORDER NOW</a>
     <div class="sidebar-footer">
         <p><i class="fas fa-phone-alt"></i> +251 79 11 069 818</p>
         <p><i class="fas fa-envelope"></i> rihasbakehouse@qmail.com</p>
@@ -36,118 +492,208 @@
 <header class="main-header">
     <div class="container">
         <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
-        <div class="logo"><a href="index.html"><h1>🌸 RIHA'S BAKEHOUSE</h1><span>Bites to Happiness</span></a></div>
+        <div class="logo"><a href="#"><h1>🌸 RIHA'S BAKEHOUSE</h1><span>Bites to Happiness</span></a></div>
         <nav class="desktop-nav">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="menu.html" class="active">Menu</a>
-            <a href="catering.html">Catering</a>
-            <a href="contact.html">Contact</a>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#" class="active">Menu</a>
+            <a href="#">Catering</a>
+            <a href="#">Contact</a>
         </nav>
-        <a href="order.html" class="btn-order"><i class="fas fa-shopping-bag"></i> Order Now</a>
+        <a href="#" class="btn-order"><i class="fas fa-shopping-bag"></i> Order Now</a>
     </div>
 </header>
 
 <main>
-    <!-- Hero Section with YOUR Image -->
     <section class="hero">
         <div class="hero-bg" style="background-image: url('https://raw.githubusercontent.com/developereth/Rihasbakehouse/e25556f86fa35220a0a562366f5642f49d7dc7b2/360_F_996648613_JeLaqLaREMrfl1DwqWluZPTdFZurAo3a.jpg');"></div>
         <div class="hero-overlay-light"></div>
         <div class="container hero-content">
             <h1>Our Menu</h1>
-            <p>Freshly baked daily with love</p>
+            <p>Freshly baked daily with love | Artisan Italian & Ethiopian Cuisine</p>
         </div>
     </section>
 
     <section class="container">
         <div class="category-filters">
             <button class="filter-btn active" data-category="all">All Items</button>
+            <button class="filter-btn" data-category="pastry">🥐 Pastry & Cakes</button>
             <button class="filter-btn" data-category="breads">🍞 Breads</button>
-            <button class="filter-btn" data-category="pastries">🥐 Pastries</button>
-            <button class="filter-btn" data-category="cakes">🎂 Cakes</button>
-            <button class="filter-btn" data-category="ethiopian">🇪🇹 Ethiopian</button>
+            <button class="filter-btn" data-category="ethiopian">🇪🇹 Ethiopian Corner</button>
+            <button class="filter-btn" data-category="pizza">🍕 Pizza</button>
+            <button class="filter-btn" data-category="sandwich">🥪 Sandwiches & Burgers</button>
+            <button class="filter-btn" data-category="main">🍽️ Main Courses</button>
+            <button class="filter-btn" data-category="breakfast">🍳 Breakfast</button>
+            <button class="filter-btn" data-category="pasta">🍝 Pasta</button>
+            <button class="filter-btn" data-category="beverages">☕ Beverages</button>
         </div>
 
         <div class="cards-grid" id="menuGrid">
+            <!-- IMAGE 1: 32be262a-b282-49ab-83d3-d4d2bc97f7c7.png - Pastry & Cakes section -->
+            <div class="product-card" data-category="pastry">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/32be262a-b282-49ab-83d3-d4d2bc97f7c7.png" class="card-image" alt="Oreo Cheesecake">
+                <div class="card-content">
+                    <h3>Oreo Cheesecake</h3>
+                    <p>Creamy cheesecake with Oreo crust</p>
+                    <div class="price">ETB 390</div>
+                    <button class="add-to-cart" data-item="Oreo Cheesecake - 390 ETB">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- IMAGE 2: 4cc14e42-3206-4631-baea-9eafce52d156.png - Pastry & Cakes section -->
+            <div class="product-card" data-category="pastry">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/4cc14e42-3206-4631-baea-9eafce52d156.png" class="card-image" alt="Red Velvet Cake">
+                <div class="card-content">
+                    <h3>Red Velvet Cake</h3>
+                    <p>Velvety smooth with cream cheese frosting</p>
+                    <div class="price">ETB 320</div>
+                    <button class="add-to-cart" data-item="Red Velvet Cake - 320 ETB">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- IMAGE 3: Screenshot_2026-06-10-13-39-59-604.png - Pizza section -->
+            <div class="product-card" data-category="pizza">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/Screenshot_2026-06-10-13-39-59-604.png" class="card-image" alt="La Luna Special Pizza">
+                <div class="card-content">
+                    <h3>La Luna Special Pizza</h3>
+                    <p>Beef, chicken, mortadella, tomato, egg, olives, mushroom, cheese</p>
+                    <div class="price">ETB 1,630</div>
+                    <button class="add-to-cart" data-item="La Luna Special Pizza - 1630 ETB">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- IMAGE 4: b71daac8-5f6c-449c-afbf-0c4bcb9f32f7.png - Ethiopian Corner -->
+            <div class="product-card" data-category="ethiopian">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/b71daac8-5f6c-449c-afbf-0c4bcb9f32f7.png" class="card-image" alt="Doro Tibs">
+                <div class="card-content">
+                    <h3>Doro Tibs</h3>
+                    <p>Spicy chicken breast, onion, tomato, green chili, butter, injera roll</p>
+                    <div class="price">ETB 1,120</div>
+                    <button class="add-to-cart" data-item="Doro Tibs - 1120 ETB">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- IMAGE 5: c34cab3e-b596-47bd-b56e-fa35ff61d421.png - Sandwiches & Burgers -->
+            <div class="product-card" data-category="sandwich">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/c34cab3e-b596-47bd-b56e-fa35ff61d421.png" class="card-image" alt="Specialty Burger">
+                <div class="card-content">
+                    <h3>Specialty Burger</h3>
+                    <p>Mixed meat, fried egg, mortadella, cheese, roasted potato</p>
+                    <div class="price">ETB 1,100</div>
+                    <button class="add-to-cart" data-item="Specialty Burger - 1100 ETB">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- IMAGE 6: cf505067-8d25-4cd7-9ce9-370eebe7676e.png - Main Courses (Fish/Poultry/Beef) -->
+            <div class="product-card" data-category="main">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/cf505067-8d25-4cd7-9ce9-370eebe7676e.png" class="card-image" alt="Grilled Salmon">
+                <div class="card-content">
+                    <h3>Grilled Salmon</h3>
+                    <p>Lemon & coriander marinated, mushed potato, rice</p>
+                    <div class="price">ETB 2,000</div>
+                    <button class="add-to-cart" data-item="Grilled Salmon - 2000 ETB">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- IMAGE 7: fbe6b5fd-f2e1-4c6c-b193-ff7f0700b4a6.png - Breakfast -->
+            <div class="product-card" data-category="breakfast">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/fbe6b5fd-f2e1-4c6c-b193-ff7f0700b4a6.png" class="card-image" alt="Spanish Omelet">
+                <div class="card-content">
+                    <h3>Spanish Omelet</h3>
+                    <p>Eggs, onion, tomato, sweet pepper, cheese, toast bread</p>
+                    <div class="price">ETB 540</div>
+                    <button class="add-to-cart" data-item="Spanish Omelet - 540 ETB">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Additional menu items using your new images cycled again -->
+            <div class="product-card" data-category="pastry">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/32be262a-b282-49ab-83d3-d4d2bc97f7c7.png" class="card-image" alt="Tiramisu">
+                <div class="card-content">
+                    <h3>Tiramisu</h3>
+                    <p>Classic Italian coffee dessert</p>
+                    <div class="price">ETB 300</div>
+                    <button class="add-to-cart" data-item="Tiramisu - 300 ETB">Add to Cart</button>
+                </div>
+            </div>
+
             <div class="product-card" data-category="breads">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/download.jpeg" class="card-image" alt="Baguette">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/4cc14e42-3206-4631-baea-9eafce52d156.png" class="card-image" alt="Artisan Baguette">
                 <div class="card-content">
                     <h3>Artisan Baguette</h3>
                     <p>Crispy crust, soft crumb</p>
                     <div class="price">ETB 70</div>
-                    <button class="add-to-cart" data-item="Baguette - 70 ETB">Add to Cart</button>
+                    <button class="add-to-cart" data-item="Artisan Baguette - 70 ETB">Add to Cart</button>
                 </div>
             </div>
-            <div class="product-card" data-category="breads">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/download%20(1).jpeg" class="card-image" alt="Sourdough">
+
+            <div class="product-card" data-category="pizza">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/Screenshot_2026-06-10-13-39-59-604.png" class="card-image" alt="Pepperoni Pizza">
                 <div class="card-content">
-                    <h3>Sourdough Boule</h3>
-                    <p>Tangy, rustic crust</p>
-                    <div class="price">ETB 120</div>
-                    <button class="add-to-cart" data-item="Sourdough - 120 ETB">Add to Cart</button>
+                    <h3>Pepperoni Pizza</h3>
+                    <p>Beef pepperoni, mozzarella, black olive</p>
+                    <div class="price">ETB 970</div>
+                    <button class="add-to-cart" data-item="Pepperoni Pizza - 970 ETB">Add to Cart</button>
                 </div>
             </div>
-            <div class="product-card" data-category="pastries">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/images%20(1).jpeg" class="card-image" alt="Croissant">
-                <div class="card-content">
-                    <h3>Butter Croissant</h3>
-                    <p>Flaky, golden, 100% butter</p>
-                    <div class="price">ETB 95</div>
-                    <button class="add-to-cart" data-item="Croissant - 95 ETB">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product-card" data-category="pastries">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/images%20(2).jpeg" class="card-image" alt="Pain au Chocolat">
-                <div class="card-content">
-                    <h3>Pain au Chocolat</h3>
-                    <p>Dark chocolate filled</p>
-                    <div class="price">ETB 105</div>
-                    <button class="add-to-cart" data-item="Pain au Chocolat - 105 ETB">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product-card" data-category="cakes">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/Mocha-Cake-Recipe-Card.jpg" class="card-image" alt="Mocha Cake">
-                <div class="card-content">
-                    <h3>Mocha Cake</h3>
-                    <p>Rich coffee-chocolate</p>
-                    <div class="price">ETB 350</div>
-                    <button class="add-to-cart" data-item="Mocha Cake - 350 ETB">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product-card" data-category="cakes">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/Yellow-Cake25-1.jpg" class="card-image" alt="Yellow Cake">
-                <div class="card-content">
-                    <h3>Yellow Cake</h3>
-                    <p>Moist, buttery vanilla</p>
-                    <div class="price">ETB 280</div>
-                    <button class="add-to-cart" data-item="Yellow Cake - 280 ETB">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product-card" data-category="cakes">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/images%20(4).jpeg" class="card-image" alt="Honey Cake">
-                <div class="card-content">
-                    <h3>Honey Cake</h3>
-                    <p>Honey-infused, walnut</p>
-                    <div class="price">ETB 280</div>
-                    <button class="add-to-cart" data-item="Honey Cake - 280 ETB">Add to Cart</button>
-                </div>
-            </div>
+
             <div class="product-card" data-category="ethiopian">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/images%20(6).jpeg" class="card-image" alt="Himbasha">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/b71daac8-5f6c-449c-afbf-0c4bcb9f32f7.png" class="card-image" alt="Special Shiro">
                 <div class="card-content">
-                    <h3>Himbasha</h3>
-                    <p>Spiced Ethiopian bread</p>
-                    <div class="price">ETB 150</div>
-                    <button class="add-to-cart" data-item="Himbasha - 150 ETB">Add to Cart</button>
+                    <h3>Special Shiro</h3>
+                    <p>Chickpeas powder cooked with Ethiopian sauce, mixed salad</p>
+                    <div class="price">ETB 600</div>
+                    <button class="add-to-cart" data-item="Special Shiro - 600 ETB">Add to Cart</button>
                 </div>
             </div>
-            <div class="product-card" data-category="ethiopian">
-                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/main/images%20(3).jpeg" class="card-image" alt="Dabo Kolo">
+
+            <div class="product-card" data-category="sandwich">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/c34cab3e-b596-47bd-b56e-fa35ff61d421.png" class="card-image" alt="Chicken Sandwich">
                 <div class="card-content">
-                    <h3>Dabo Kolo</h3>
-                    <p>Crunchy snack bites</p>
-                    <div class="price">ETB 60</div>
-                    <button class="add-to-cart" data-item="Dabo Kolo - 60 ETB">Add to Cart</button>
+                    <h3>Chicken Sandwich with Cheese</h3>
+                    <p>Chicken, provolone cheese, mayo, roasted potato</p>
+                    <div class="price">ETB 900</div>
+                    <button class="add-to-cart" data-item="Chicken Sandwich - 900 ETB">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="main">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/cf505067-8d25-4cd7-9ce9-370eebe7676e.png" class="card-image" alt="Grilled Nile Perch">
+                <div class="card-content">
+                    <h3>Grilled Nile Perch</h3>
+                    <p>Lemon butter sauce, mushed potato, vegetable</p>
+                    <div class="price">ETB 1,200</div>
+                    <button class="add-to-cart" data-item="Grilled Nile Perch - 1200 ETB">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="breakfast">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/fbe6b5fd-f2e1-4c6c-b193-ff7f0700b4a6.png" class="card-image" alt="Pancake">
+                <div class="card-content">
+                    <h3>Pancake</h3>
+                    <p>Three layers with syrup & sugar</p>
+                    <div class="price">ETB 450</div>
+                    <button class="add-to-cart" data-item="Pancake - 450 ETB">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="pasta">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/32be262a-b282-49ab-83d3-d4d2bc97f7c7.png" class="card-image" alt="Spaghetti Carbonara">
+                <div class="card-content">
+                    <h3>Carbonara Sauce</h3>
+                    <p>Creamy carbonara with spaghetti</p>
+                    <div class="price">ETB 890</div>
+                    <button class="add-to-cart" data-item="Carbonara - 890 ETB">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="beverages">
+                <img src="https://raw.githubusercontent.com/developereth/Rihasbakehouse/128c63f7dcf0e7a0afee0558c20e66028d747c66/4cc14e42-3206-4631-baea-9eafce52d156.png" class="card-image" alt="Cappuccino">
+                <div class="card-content">
+                    <h3>Cappuccino</h3>
+                    <p>Espresso, steamed milk, foam</p>
+                    <div class="price">ETB 200</div>
+                    <button class="add-to-cart" data-item="Cappuccino - 200 ETB">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -160,7 +706,7 @@
             <div class="footer-col">
                 <div class="footer-logo">🌸 Riha's Bakehouse</div>
                 <p class="tagline">Bites to Happiness</p>
-                <p>Artisan Bakery & Catering<br>Addis Ababa, Ethiopia</p>
+                <p>Artisan Bakery & Italian-Ethiopian Cuisine<br>Addis Ababa, Ethiopia</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
@@ -171,12 +717,12 @@
             <div class="footer-col">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="menu.html">Our Menu</a></li>
-                    <li><a href="catering.html">Catering</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="order.html">Order Online</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Menu</a></li>
+                    <li><a href="#">Catering</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Order Online</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -213,8 +759,27 @@
 </footer>
 
 <div id="toastMsg" class="toast-msg">✓ Added to cart</div>
-<script src="js/main.js"></script>
+
 <script>
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileSidebar = document.getElementById('mobileSidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+
+    function openSidebar() {
+        mobileSidebar.classList.add('open');
+        sidebarOverlay.classList.add('active');
+    }
+
+    function closeSidebar() {
+        mobileSidebar.classList.remove('open');
+        sidebarOverlay.classList.remove('active');
+    }
+
+    mobileMenuBtn?.addEventListener('click', openSidebar);
+    closeSidebarBtn?.addEventListener('click', closeSidebar);
+    sidebarOverlay?.addEventListener('click', closeSidebar);
+
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', function() {
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -227,6 +792,16 @@
                     card.style.display = 'none';
                 }
             });
+        });
+    });
+
+    const toast = document.getElementById('toastMsg');
+    document.querySelectorAll('.add-to-cart').forEach(btn => {
+        btn.addEventListener('click', function() {
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 1500);
         });
     });
 </script>
